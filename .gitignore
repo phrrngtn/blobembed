@@ -1,0 +1,8 @@
+build/
+*.so
+*.dylib
+*.duckdb_extension
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
