@@ -22,4 +22,9 @@ cmake.args = ["-DBUILD_PYTHON_BINDINGS=ON"]
 dev = [
     "huggingface-hub[cli]>=0.25.0",
     "nanobind>=2.12.0",
+    "nltk>=3.9.1",
+    "psycopg2-binary>=2.9.10",
+    "pyarrow>=17.0.0",
+    "pyodbc>=5.2.0",
+    "sqlalchemy>=2.0.48",
 ]
