@@ -6,3 +6,8 @@ __pycache__/
 *.pyc
 .venv/
 *.egg-info/
+*.parquet
+*.sqlite
+*.db
+*.duckdb
+data/geonames/countryInfo.tsv
