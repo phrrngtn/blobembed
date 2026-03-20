@@ -6,6 +6,7 @@ from blobembed.blobembed_ext import (
     token_count,
     unload_model,
     resolve_hf_path,
+    cosine_sim,
 )
 
 __all__ = [
@@ -16,4 +17,5 @@ __all__ = [
     "token_count",
     "unload_model",
     "resolve_hf_path",
+    "cosine_sim",
 ]

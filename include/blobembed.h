@@ -45,7 +45,7 @@ int blobembed_load_hf_model(const char *name, const char *repo_id,
 void blobembed_unload_model(const char *name);
 
 /*
- * Compute the embedding for a text string.
+ * Compute the embedding for a text string (raw float array).
  *
  * Returns a malloc'd float array of length *out_dim.
  * The embedding is L2-normalized.
@@ -60,6 +60,14 @@ float *blobembed_embed(const char *model_name,
  * Free an embedding returned by blobembed_embed().
  */
 void blobembed_free_embedding(float *embd);
+
+/*
+ * Compute cosine similarity between two float arrays.
+ *
+ * Both must have the same length. Returns NaN on error (dimension mismatch).
+ */
+double blobembed_cosine_sim(const float *a, int a_len,
+                            const float *b, int b_len);
 
 /*
  * Return the embedding dimension for a loaded model.

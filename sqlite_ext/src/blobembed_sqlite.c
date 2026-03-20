@@ -164,6 +164,27 @@ static void be_unload_model_func(sqlite3_context *ctx, int argc,
     sqlite3_result_text(ctx, "ok", -1, SQLITE_STATIC);
 }
 
+/* ── be_cosine_sim(blob_a, blob_b) → REAL ──────────────────────────── */
+
+static void be_cosine_sim_func(sqlite3_context *ctx, int argc,
+                               sqlite3_value **argv) {
+    (void)argc;
+
+    if (sqlite3_value_type(argv[0]) == SQLITE_NULL ||
+        sqlite3_value_type(argv[1]) == SQLITE_NULL) {
+        sqlite3_result_null(ctx);
+        return;
+    }
+
+    const float *a = (const float *)sqlite3_value_blob(argv[0]);
+    const float *b = (const float *)sqlite3_value_blob(argv[1]);
+    int a_len = sqlite3_value_bytes(argv[0]) / (int)sizeof(float);
+    int b_len = sqlite3_value_bytes(argv[1]) / (int)sizeof(float);
+
+    double sim = blobembed_cosine_sim(a, a_len, b, b_len);
+    sqlite3_result_double(ctx, sim);
+}
+
 /* ── Extension init ──────────────────────────────────────────────── */
 
 #ifdef _WIN32
@@ -208,6 +229,11 @@ int sqlite3_blobembed_init(sqlite3 *db, char **pzErrMsg,
     rc = sqlite3_create_function(db, "be_unload_model", 1,
                                  SQLITE_UTF8, NULL,
                                  be_unload_model_func, NULL, NULL);
+    if (rc != SQLITE_OK) return rc;
+
+    rc = sqlite3_create_function(db, "be_cosine_sim", 2,
+                                 SQLITE_UTF8 | SQLITE_DETERMINISTIC, NULL,
+                                 be_cosine_sim_func, NULL, NULL);
     if (rc != SQLITE_OK) return rc;
 
     return SQLITE_OK;

@@ -290,12 +290,50 @@ static void be_unload_model_func(duckdb_function_info info,
     }
 }
 
+/* ── be_cosine_sim(list_a, list_b) → DOUBLE ────────────────────────── */
+
+static void be_cosine_sim_func(duckdb_function_info info,
+                               duckdb_data_chunk input,
+                               duckdb_vector output) {
+    idx_t size = duckdb_data_chunk_get_size(input);
+    duckdb_vector vec0 = duckdb_data_chunk_get_vector(input, 0);
+    duckdb_vector vec1 = duckdb_data_chunk_get_vector(input, 1);
+    uint64_t *val0 = duckdb_vector_get_validity(vec0);
+    uint64_t *val1 = duckdb_vector_get_validity(vec1);
+    double *out_data = (double *)duckdb_vector_get_data(output);
+
+    /* List vectors: entries array + child vector */
+    duckdb_list_entry *entries0 = (duckdb_list_entry *)duckdb_vector_get_data(vec0);
+    duckdb_list_entry *entries1 = (duckdb_list_entry *)duckdb_vector_get_data(vec1);
+    duckdb_vector child0 = duckdb_list_vector_get_child(vec0);
+    duckdb_vector child1 = duckdb_list_vector_get_child(vec1);
+    float *child_data0 = (float *)duckdb_vector_get_data(child0);
+    float *child_data1 = (float *)duckdb_vector_get_data(child1);
+
+    for (idx_t row = 0; row < size; row++) {
+        if ((val0 && !duckdb_validity_row_is_valid(val0, row)) ||
+            (val1 && !duckdb_validity_row_is_valid(val1, row))) {
+            duckdb_vector_ensure_validity_writable(output);
+            duckdb_validity_set_row_invalid(duckdb_vector_get_validity(output), row);
+            continue;
+        }
+
+        int len0 = (int)entries0[row].length;
+        int len1 = (int)entries1[row].length;
+        float *a = &child_data0[entries0[row].offset];
+        float *b = &child_data1[entries1[row].offset];
+
+        out_data[row] = blobembed_cosine_sim(a, len0, b, len1);
+    }
+}
+
 /* ── Register functions ───────────────────────────────────────────── */
 
 static void register_functions(duckdb_connection connection) {
     duckdb_logical_type varchar_type = duckdb_create_logical_type(DUCKDB_TYPE_VARCHAR);
     duckdb_logical_type int_type = duckdb_create_logical_type(DUCKDB_TYPE_INTEGER);
     duckdb_logical_type float_type = duckdb_create_logical_type(DUCKDB_TYPE_FLOAT);
+    duckdb_logical_type double_type = duckdb_create_logical_type(DUCKDB_TYPE_DOUBLE);
     duckdb_logical_type list_float_type = duckdb_create_list_type(float_type);
 
     /* be_load_model(name, path) → VARCHAR */
@@ -369,7 +407,20 @@ static void register_functions(duckdb_connection connection) {
         duckdb_destroy_scalar_function(&func);
     }
 
+    /* be_cosine_sim(list_a, list_b) → DOUBLE */
+    {
+        duckdb_scalar_function func = duckdb_create_scalar_function();
+        duckdb_scalar_function_set_name(func, "be_cosine_sim");
+        duckdb_scalar_function_add_parameter(func, list_float_type);
+        duckdb_scalar_function_add_parameter(func, list_float_type);
+        duckdb_scalar_function_set_return_type(func, double_type);
+        duckdb_scalar_function_set_function(func, be_cosine_sim_func);
+        duckdb_register_scalar_function(connection, func);
+        duckdb_destroy_scalar_function(&func);
+    }
+
     duckdb_destroy_logical_type(&list_float_type);
+    duckdb_destroy_logical_type(&double_type);
     duckdb_destroy_logical_type(&float_type);
     duckdb_destroy_logical_type(&int_type);
     duckdb_destroy_logical_type(&varchar_type);

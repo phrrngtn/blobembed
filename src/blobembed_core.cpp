@@ -422,6 +422,27 @@ extern "C" void blobembed_free_embedding(float *embd) {
     free(embd);
 }
 
+/* ── Cosine similarity ─────────────────────────────────────────────── */
+
+extern "C" double blobembed_cosine_sim(const float *a, int a_len,
+                                       const float *b, int b_len) {
+    if (!a || !b || a_len != b_len || a_len <= 0) {
+        set_error("cosine_sim: dimension mismatch or null input");
+        return NAN;
+    }
+
+    double dot = 0.0, norm_a = 0.0, norm_b = 0.0;
+    for (int i = 0; i < a_len; i++) {
+        dot    += (double)a[i] * (double)b[i];
+        norm_a += (double)a[i] * (double)a[i];
+        norm_b += (double)b[i] * (double)b[i];
+    }
+
+    double denom = sqrt(norm_a) * sqrt(norm_b);
+    if (denom == 0.0) return 0.0;
+    return dot / denom;
+}
+
 /* ── Info ──────────────────────────────────────────────────────────── */
 
 extern "C" int blobembed_model_dim(const char *model_name) {

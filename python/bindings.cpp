@@ -73,6 +73,16 @@ static void py_unload_model(const std::string &name) {
     blobembed_unload_model(name.c_str());
 }
 
+static double py_cosine_sim(const std::vector<float> &a,
+                            const std::vector<float> &b) {
+    double sim = blobembed_cosine_sim(a.data(), (int)a.size(),
+                                     b.data(), (int)b.size());
+    if (std::isnan(sim)) {
+        throw nb::value_error("dimension mismatch");
+    }
+    return sim;
+}
+
 static nb::object py_resolve_hf_path(const std::string &repo_id,
                                      const std::string &filename,
                                      std::optional<std::string> ref) {
@@ -119,4 +129,8 @@ NB_MODULE(blobembed_ext, m) {
           nb::arg("repo_id"), nb::arg("filename"),
           nb::arg("ref") = nb::none(),
           "Resolve the filesystem path for a model in the HF cache");
+
+    m.def("cosine_sim", &py_cosine_sim,
+          nb::arg("a"), nb::arg("b"),
+          "Compute cosine similarity between two embedding vectors");
 }
