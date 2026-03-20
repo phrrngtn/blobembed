@@ -10,13 +10,16 @@
 
 #include "llama.h"
 
+#include <atomic>
 #include <cmath>
 #include <cstdlib>
 #include <cstring>
 #include <mutex>
 #include <shared_mutex>
 #include <string>
+#include <thread>
 #include <unordered_map>
+#include <vector>
 
 /* ── Thread-local error state ──────────────────────────────────────── */
 
@@ -36,12 +39,50 @@ extern "C" const char *blobembed_errmsg(void) {
 
 /* ── Model registry ────────────────────────────────────────────────── */
 
+/*
+ * Context pool: multiple llama_context instances sharing one model.
+ * Each DuckDB thread acquires a context, uses it for a chunk of rows,
+ * then releases it. The model weights are shared (mmap'd, read-only).
+ * Each context has its own KV cache (~72MB for nomic).
+ */
+static constexpr int MAX_POOL_SIZE = 16;
+
+struct ContextPool {
+    llama_context *contexts[MAX_POOL_SIZE];
+    std::atomic<bool> in_use[MAX_POOL_SIZE];
+    int size;
+
+    ContextPool() : size(0) {
+        for (int i = 0; i < MAX_POOL_SIZE; i++) {
+            contexts[i] = nullptr;
+            in_use[i].store(false);
+        }
+    }
+
+    /* Acquire a free context. Spins briefly, then yields. */
+    int acquire() {
+        while (true) {
+            for (int i = 0; i < size; i++) {
+                bool expected = false;
+                if (in_use[i].compare_exchange_weak(expected, true)) {
+                    return i;
+                }
+            }
+            std::this_thread::yield();
+        }
+    }
+
+    void release(int idx) {
+        llama_kv_self_clear(contexts[idx]);
+        in_use[idx].store(false);
+    }
+};
+
 struct ModelEntry {
     llama_model *model;
-    llama_context *ctx;
+    ContextPool pool;
     int n_embd;
     int n_ctx;     /* context window size (max tokens per encode) */
-    std::mutex ctx_mu; /* serializes encode calls on this model's context */
 };
 
 static std::shared_mutex g_registry_mu;
@@ -166,7 +207,9 @@ extern "C" void blobembed_init(void) {
 extern "C" void blobembed_cleanup(void) {
     std::unique_lock lock(g_registry_mu);
     for (auto &kv : g_registry) {
-        if (kv.second->ctx) llama_free(kv.second->ctx);
+        for (int i = 0; i < kv.second->pool.size; i++) {
+            if (kv.second->pool.contexts[i]) llama_free(kv.second->pool.contexts[i]);
+        }
         if (kv.second->model) llama_model_free(kv.second->model);
         delete kv.second;
     }
@@ -203,32 +246,41 @@ extern "C" int blobembed_load_model(const char *name, const char *path) {
     int n_ctx_train = llama_model_n_ctx_train(model);
     if (n_ctx_train <= 0) n_ctx_train = 2048;
 
-    /* Create context with embeddings enabled */
+    /* Create a pool of contexts with embeddings enabled */
+    int pool_size = (int)std::thread::hardware_concurrency();
+    if (pool_size <= 0) pool_size = 4;
+    /* Cap at 8 to avoid excessive memory use (each ctx ~72MB KV cache) */
+    if (pool_size > 8) pool_size = 8;
+
     llama_context_params cparams = llama_context_default_params();
     cparams.embeddings = true;
     cparams.n_ctx = (uint32_t)n_ctx_train;
     cparams.n_batch = (uint32_t)n_ctx_train;
-    cparams.n_ubatch = (uint32_t)n_ctx_train; /* must equal n_batch for non-causal models */
-
-    llama_context *ctx = llama_init_from_model(model, cparams);
-    if (!ctx) {
-        llama_model_free(model);
-        set_error("failed to create llama context");
-        return -1;
-    }
-
-    int n_embd = llama_model_n_embd(model);
+    cparams.n_ubatch = (uint32_t)n_ctx_train;
 
     auto *entry = new ModelEntry();
     entry->model = model;
-    entry->ctx = ctx;
-    entry->n_embd = n_embd;
+    entry->n_embd = llama_model_n_embd(model);
     entry->n_ctx = n_ctx_train;
+    entry->pool.size = pool_size;
+
+    for (int i = 0; i < pool_size; i++) {
+        entry->pool.contexts[i] = llama_init_from_model(model, cparams);
+        if (!entry->pool.contexts[i]) {
+            /* Clean up already-created contexts */
+            for (int j = 0; j < i; j++) llama_free(entry->pool.contexts[j]);
+            llama_model_free(model);
+            delete entry;
+            set_error("failed to create llama context pool");
+            return -1;
+        }
+        entry->pool.in_use[i].store(false);
+    }
 
     std::unique_lock lock(g_registry_mu);
     /* Double-check (another thread may have loaded it) */
     if (g_registry.count(name)) {
-        llama_free(ctx);
+        for (int i = 0; i < pool_size; i++) llama_free(entry->pool.contexts[i]);
         llama_model_free(model);
         delete entry;
         return 0;
@@ -256,9 +308,11 @@ extern "C" void blobembed_unload_model(const char *name) {
     g_registry.erase(it);
     lock.unlock();
 
-    /* Wait for any in-flight encode to finish */
-    std::lock_guard ctx_lock(entry->ctx_mu);
-    if (entry->ctx) llama_free(entry->ctx);
+    /* Wait for all in-flight encodes to finish, then free */
+    for (int i = 0; i < entry->pool.size; i++) {
+        while (entry->pool.in_use[i].load()) std::this_thread::yield();
+        if (entry->pool.contexts[i]) llama_free(entry->pool.contexts[i]);
+    }
     if (entry->model) llama_model_free(entry->model);
     delete entry;
 }
@@ -302,10 +356,10 @@ static void l2_normalize(float *vec, int n) {
  * The embedding is ADDED to accum (for multi-window averaging).
  * Returns 0 on success.
  */
-static int encode_window(ModelEntry *entry,
+static int encode_window(ModelEntry *entry, llama_context *ctx,
                          const llama_token *tokens, int n_tokens,
                          float *accum) {
-    llama_kv_self_clear(entry->ctx);
+    llama_kv_self_clear(ctx);
 
     llama_batch batch = llama_batch_init(n_tokens, 0, 1);
     for (int i = 0; i < n_tokens; i++) {
@@ -320,16 +374,16 @@ static int encode_window(ModelEntry *entry,
     int rc;
     if (llama_model_has_encoder(entry->model) &&
         !llama_model_has_decoder(entry->model)) {
-        rc = llama_encode(entry->ctx, batch);
+        rc = llama_encode(ctx, batch);
     } else {
-        rc = llama_decode(entry->ctx, batch);
+        rc = llama_decode(ctx, batch);
     }
     llama_batch_free(batch);
 
     if (rc != 0) { set_error("encode failed"); return -1; }
 
-    const float *embd = llama_get_embeddings_seq(entry->ctx, 0);
-    if (!embd) embd = llama_get_embeddings(entry->ctx);
+    const float *embd = llama_get_embeddings_seq(ctx, 0);
+    if (!embd) embd = llama_get_embeddings(ctx);
     if (!embd) { set_error("failed to extract embeddings"); return -1; }
 
     int n_embd = entry->n_embd;
@@ -373,12 +427,14 @@ extern "C" float *blobembed_embed(const char *model_name,
     float *accum = (float *)calloc(n_embd, sizeof(float));
     if (!accum) { free(tokens); set_error("out of memory"); return nullptr; }
 
-    /* Serialize context access for this model */
-    std::lock_guard ctx_lock(entry->ctx_mu);
+    /* Acquire a context from the pool */
+    int ctx_idx = entry->pool.acquire();
+    llama_context *ctx = entry->pool.contexts[ctx_idx];
 
     if (n_tokens <= n_ctx) {
         /* ── Fast path: fits in one window ──────────────────────── */
-        if (encode_window(entry, tokens, n_tokens, accum) != 0) {
+        if (encode_window(entry, ctx, tokens, n_tokens, accum) != 0) {
+            entry->pool.release(ctx_idx);
             free(tokens); free(accum);
             return nullptr;
         }
@@ -393,7 +449,8 @@ extern "C" float *blobembed_embed(const char *model_name,
             int window_len = n_tokens - offset;
             if (window_len > n_ctx) window_len = n_ctx;
 
-            if (encode_window(entry, tokens + offset, window_len, accum) != 0) {
+            if (encode_window(entry, ctx, tokens + offset, window_len, accum) != 0) {
+                entry->pool.release(ctx_idx);
                 free(tokens); free(accum);
                 return nullptr;
             }
@@ -410,6 +467,9 @@ extern "C" float *blobembed_embed(const char *model_name,
             for (int i = 0; i < n_embd; i++) accum[i] /= (float)n_windows;
         }
     }
+
+    /* Release context back to pool */
+    entry->pool.release(ctx_idx);
 
     /* L2-normalize */
     l2_normalize(accum, n_embd);
