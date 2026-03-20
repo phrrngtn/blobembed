@@ -1,0 +1,1620 @@
+metadata:
+  extraction_date: "2026-03-20"
+  total_domains: 18
+  wikidata_domains: 5
+  curated_domains: 13
+  total_members: 800
+  description: "Domain enumerations for column name classification via blobfilters"
+
+domains:
+  - domain_name: countries
+    domain_label: country
+    source: wikidata
+    wikidata_qid: Q6256
+    member_count: 222
+    members:
+      - label: Afghanistan
+        alt_labels: [Affghanistan, Affghanisthan, Affghaunistan, Afghania, Afghanisthan, Afghaunistan, Afghaunistaun]
+      - label: Albania
+        alt_labels: ["People's Republic of Albania", "People's Socialist Republic of Albania", Republika e Shqipërisë, Republika Popullore e Shqiperise, Republika Popullore Socialiste e Shqiperise, Shqipërisë, Republic of Albania]
+      - label: Algeria
+        alt_labels: [dz, Djazaïr, Dzayer, "People's Democratic Republic of Algeria"]
+      - label: Andorra
+        alt_labels: [Principality of Andorra, Principality of the Valleys of Andorra]
+      - label: Angola
+        alt_labels: [Ngola, ao, Republic of Angola]
+      - label: Antigua and Barbuda
+      - label: Argentina
+        alt_labels: [Argentine Republic, Republic of Argentina, Republica Argentina]
+      - label: Armenia
+        alt_labels: [Hayastan, Hayastani Hanrapetut’yun, Republic of Armenia, Հայաստան]
+      - label: Aruba
+        alt_labels: [ARU, aw, Country of Aruba, Island of Aruba]
+      - label: Australia
+        alt_labels: ["'Straya", Down Under, Oz, Stria, Commonwealth of Australia, New Holland, Straya, Nova Hollandia, Aussieland, New Hollandia, Stralia, The Commonwealth of Australia]
+      - label: Austria
+        alt_labels: [Republic of Austria]
+      - label: Azerbaijan
+        alt_labels: [az, Azərbaycan, Azərbaycan Respublikası, Republic of Azerbaijan]
+      - label: Bahrain
+        alt_labels: [BAH, bh, Bahrein Islands, "Dawlat al-Bahrain", "ISO 3166-1:BH", Kingdom of Bahrain, "Mamlakat al-Baḥrayn"]
+      - label: Bangladesh
+        alt_labels: [bd, Bangla Desh, Country of Bengal, Land of Bengal, "People's Republic of Bangladesh"]
+      - label: Barbados
+        alt_labels: [BB, BAR, Barbadoes, bb]
+      - label: Belarus
+        alt_labels: [by, White Russia, BLR, Belorussia, Bielaruś, Bielorussia, Byeloruss, Byelorussia, Republic of Belarus, "Respublika Belarus'", Respublika Bielaruś, White Ruthenia]
+      - label: Belgium
+        alt_labels: [Kingdom of Belgium]
+      - label: Belize
+        alt_labels: [bz]
+      - label: Benin
+        alt_labels: [Dahomey, BJ, Republic of Benin, BEN]
+      - label: Bhutan
+        alt_labels: [bt, BHU, Kingdom of Bhutan]
+      - label: Bolivia
+        alt_labels: [Bolivia (Plurinational State of), Plurinational State of Bolivia, Republic of Bolivia]
+      - label: Bosnia
+      - label: Bosnia and Herzegovina
+        alt_labels: [Bosnia, BIH, ba, "B&H", BiH, "Bosnia & Herzegovina", Bosnia and Hercegovina, "Bosnia-Herzegovina"]
+      - label: Botswana
+        alt_labels: [bw, Lefatshe la Botswana, Republic of Botswana]
+      - label: Brazil
+        alt_labels: [Brasil, Federative Republic of Brazil]
+      - label: British Colony of Jamaica
+      - label: British North Borneo
+        alt_labels: [North Borneo, British Borneo Territories, British Territories in Borneo, Colony of North Borneo, NBO, State of British North Borneo]
+      - label: Brunei
+        alt_labels: [bn, BRN, BRU, Brunei Darussalam, Nation of Brunei, the Abode of Peace, Negara Brunei Darussalam]
+      - label: Bulgaria
+        alt_labels: [Republic of Bulgaria]
+      - label: Burkina Faso
+        alt_labels: [bf, Republic of Burkina Faso, "Republic of Upper Volta (-1984)"]
+      - label: Burundi
+        alt_labels: [bi, Gouvernement du Burundi, Republic of Burundi, "Republika y'Uburundi"]
+      - label: Cambodia
+        alt_labels: [Kamboja, Kingdom of Cambodia, KHM, kh, Camboya, Campuchia, Kambodzha, Kampuchea]
+      - label: Cameroon
+        alt_labels: [Republic of Cameroon]
+      - label: Canada
+        alt_labels: [Can]
+      - label: Cape Verde
+        alt_labels: [Cabo Verde, Cape Verde Islands, Republic of Cabo Verde, Republic of Cape Verde]
+      - label: Catalan Republic
+      - label: Central African Republic
+        alt_labels: [CAR, CAF, Central Africa, cf]
+      - label: Chad
+        alt_labels: [GUM, CHA, td, Republic of Chad]
+      - label: Chile
+        alt_labels: [CHI, Republic of Chile, República de Chile]
+      - label: Colombia
+        alt_labels: [CO, COL, Colombiá, "ISO 3166-1:CO", Republic of Colombia, The Republic of Colombia]
+      - label: Comoros
+        alt_labels: [the Comoros, km, "al-Ittiḥād al-Qumurī", "Juzur al-Qamar", "Juzur al-Qumur", Massiwa ya komori, ouvoimoja wakomori, Udzima wa Komori, Union des Comores, Union of the Comoros]
+      - label: Cook Islands
+        alt_labels: [COK, ck, Hervey Islands, Cook Group]
+      - label: Costa Rica
+        alt_labels: [CRC, CRI, cr, Republic of Costa Rica]
+      - label: County Pyrmont
+      - label: Croatia
+        alt_labels: [HR, CRO, RH, HRV, Republic of Croatia]
+      - label: Cuba
+        alt_labels: [Republic of Cuba, CUB, cu]
+      - label: Curaçao
+        alt_labels: [Curacao, CW, Country of Curaçao, Curacau, Curaçoa, Curazao, Curaςao, Curocao, CUW, Island Territory of Curaçao, "ISO 3166-1:CW", Kòrsou]
+      - label: Cyprus
+        alt_labels: [Republic of Cyprus, Greek Administration of Southern Cyprus, Greek Cypriot State]
+      - label: Czech Republic
+        alt_labels: [Czechia]
+      - label: Democratic Republic of the Congo
+        alt_labels: [Congo, Zaire, DRC, D.R.C., COD, cd, Congo (Kinshasa), "Congo-Kinshasa", Dem. Rep. Congo, Dem. Republic of Congo, Dem. Republic of the Congo, Democratic Republic of Congo, DR Congo]
+      - label: Denmark
+        alt_labels: [Dania, TAN, dk, Denmark proper, metropolitan Denmark]
+      - label: Djibouti
+        alt_labels: [dj, Jabuuti, Gabuuti, Jībūtī, Republic of Djibouti]
+      - label: Dominica
+        alt_labels: [DMA, DOM, dm, Commonwealth of Dominica, Island of Dominica, The Commonwealth of Dominica, "Wai'tu kubuli", Wai‘tu kubuli]
+      - label: Dominican Republic
+        alt_labels: [DR, RD, DO, Dominicana, DomRep, Republica Dominicana, República Dominicana]
+      - label: Ecuador
+        alt_labels: [Republic of Equator, Republic of Ecuador, Republic of the Equator, The Ecuadorian State]
+      - label: Egypt
+        alt_labels: [Misr, Republic of Egypt, Arab Rep. Egypt, Arab Republic of Egypt, Rep. Egypt]
+      - label: El Salvador
+        alt_labels: [Salvador, ESA, sv, Republic of El Salvador]
+      - label: Emirate of  Al Qawasim
+      - label: Emirate of Lengeh
+      - label: Equatorial Guinea
+        alt_labels: [GEQ, gq, Republic of Equatorial Guinea]
+      - label: Eritrea
+        alt_labels: [ERI, er, IRI, Ertrā, Iritriyā, State of Eritrea]
+      - label: Estonia
+        alt_labels: [Eesti, ee, Estland, Eesti Vabariik, Republic of Estonia]
+      - label: Eswatini
+        alt_labels: [Swaziland, eSwatini, Kingdom of Eswatini, Kingdom of Swaziland, sz, Umbuso weSwatini]
+      - label: Ethiopia
+        alt_labels: [et, Federal Democratic Republic of Ethiopia]
+      - label: Federated States of Micronesia
+        alt_labels: [Micronesia, FSM, fm, Fed. Sts. Micronesia, Fed. Sts. of Micronesia, Federated States of Micronesia, FSM]
+      - label: Fiji
+        alt_labels: [Viti, FIJ, fj, Fijī, Fijī Gaṇarājya, Matanitu Tugalala o Viti, Republic of Fiji, Republic of the Fiji Islands]
+      - label: Finland
+        alt_labels: [fi, Suomi, Finnia, Land of Thousand Lakes, Republic of Finland, Republiken Finland, Suomen tasavalta]
+      - label: France
+        alt_labels: [French Republic]
+      - label: Gabon
+        alt_labels: [ga, GAB, Gabonese Republic, Republique Gabonaise, République Gabonaise]
+      - label: Georgia
+        alt_labels: [Georgia (country), Sakartvelo, GEO, Republic of Georgia, European Georgia, Georgia (Sakartvelo)]
+      - label: Germany
+        alt_labels: [Federal Republic of Germany]
+      - label: Ghana
+        alt_labels: [Republic of Ghana, gh]
+      - label: Greece
+        alt_labels: [Hellas, el, gr, Hellenic Republic, Ellada, Greek Republic, Hellas, Greece]
+      - label: Greenland
+        alt_labels: [GL, GRL, Groenland, Kalaallit Nunaat, Greenlandia]
+      - label: Grenada
+        alt_labels: [GRN, gd]
+      - label: Guatemala
+        alt_labels: [GT, GTM, gt, Republic of Guatemala]
+      - label: Guinea
+        alt_labels: [gn, GUI, "Guinea-Conakry", Republic of Guinea]
+      - label: "Guinea-Bissau"
+        alt_labels: [GBS, gw, "Republic of Guinea-Bissau"]
+      - label: Guyana
+        alt_labels: ["Co-operative Republic of Guyana", Republic of Guyana, GUY, gy]
+      - label: Haiti
+        alt_labels: [Hayti, ht, HAI, HT, Ayiti, Haitian Republic, Republic of Haiti]
+      - label: Honduras
+        alt_labels: [HON, HND, HN, hn, Honduran Republic, Republic of Honduras]
+      - label: Hungary
+      - label: Iceland
+        alt_labels: [Ysland, Icelandic republic, Isl., Republic of Iceland]
+      - label: India
+        alt_labels: [Hindustan, Bharata, Tianzhu, Hindoostan, Al Hind, Bharatvarsh, Tenjiku, Bharat Ganarajya, Indostan, Republic of India, Bharat]
+      - label: Indonesia
+        alt_labels: [id, ID, INA, IDN, Republic of Indonesia]
+      - label: Iran
+        alt_labels: [Islamic Rep. Iran, Islamic Republic of Iran, Persia, IRI, ir]
+      - label: Iraq
+        alt_labels: [Republic of Iraq, iq]
+      - label: Ireland
+        alt_labels: [Republic of Ireland, Hibernia, Southern Ireland, Irish Republic, Éire]
+      - label: Israel
+        alt_labels: [State of Israel, ISR, IL, il, Yisrael]
+      - label: Italy
+        alt_labels: [Italia, Italian Republic, Republic of Italy]
+      - label: Italy in the Middle Ages
+        alt_labels: [medieval Italy]
+      - label: Ivory Coast
+        alt_labels: ["Côte d'Ivoire", ci, CIV, "Cote d'Ivoire", "Cote d'lvoire", Côte d’Ivoire, Cote Ivoire, "Cote-d'Ivoire", "Côte-d'Ivoire", "Republic of Cote d'Ivoire", "Republic of Côte d'Ivoire", Republic of Ivory Coast, Republic of the Ivory Coast, The Ivory Coast]
+      - label: Jamaica
+        alt_labels: [JA, Commonwealth of Jamaica]
+      - label: Japan
+        alt_labels: [Land of the Rising Sun, Nippon, Nihon, Iapan, Iapon, Land of Rising Sun, "Nihon-koku", "Nippon-koku", State of Japan]
+      - label: Jordan
+        alt_labels: [Hashemite Kingdom of Jordan, "ISO 3166-1:JO", Kingdom of Jordan, State of Jordan, Giordania, HKJ, Yarden]
+      - label: Joseon Cybernation
+        alt_labels: [Joseon]
+      - label: Kazakhstan
+        alt_labels: [Qazaqstan, Republic of Kazakhstan, Republic of Qazaqstan, kz]
+      - label: Kenya
+        alt_labels: [KEN, ke, KE, Republic of Kenya]
+      - label: Kingdom of Navarre
+        alt_labels: [Kingdom of Pamplona]
+      - label: Kingdom of the Netherlands
+        alt_labels: [Netherlands, the Netherlands, Nederlanden]
+      - label: Kiribati
+        alt_labels: [ki, KIR, Republic of Kiribati]
+      - label: Kosovo
+        alt_labels: [KOS, XK, KV, Kosova, Republic of Kosovo, RKS, XKX]
+      - label: Kuwait
+        alt_labels: [KUW, kw, State of Kuwait]
+      - label: Kyrgyzstan
+        alt_labels: [kg, Kyrgyz Republic]
+      - label: Laos
+        alt_labels: [la, LAO, Lao PDR, "Lao People's Democratic Republic"]
+      - label: Latvia
+        alt_labels: [Republic of Latvia, lv, Latveja, Latvejas Republika, Latvian Republic, Latvija, Latvijas Republika, Leţmо̄, Leţmо̄ Vabāmо̄]
+      - label: Lebanon
+        alt_labels: [lb, Lebanese Republic, Lubnan, Republic of Lebanon, State of Lebanon]
+      - label: Lesotho
+        alt_labels: [ls, Kingdom of Lesotho, LES, The Mountain Kingdom]
+      - label: Liberia
+        alt_labels: [Liber, lr, Republic of Liberia]
+      - label: Libya
+        alt_labels: [ly, LBA, State of Libya]
+      - label: Liechtenstein
+        alt_labels: [li, FL, Principality of Liechtenstein]
+      - label: Lithuania
+        alt_labels: [Republic of Lithuania]
+      - label: Luxembourg
+        alt_labels: [Luxemburg, Grand Duchy of Luxembourg]
+      - label: Madagascar
+        alt_labels: [Malagascar, Malagaskar, MDG, mg, Republic of Madagascar, MAD]
+      - label: Malawi
+        alt_labels: [MAW, mw, Republic of Malawi]
+      - label: Malaysia
+        alt_labels: [MAS, Federation of Malaysia, Malaysia Federation]
+      - label: Maldives
+        alt_labels: [MDV, mv, Republic of Maldives]
+      - label: Mali
+        alt_labels: [MLI, ml, Republic of Mali]
+      - label: Malta
+        alt_labels: [Republic of Malta]
+      - label: Marshall Islands
+        alt_labels: [mh, Republic of the Marshall Islands]
+      - label: Mauritania
+        alt_labels: [Agawej, Gannaar, Gànnaar, Islamic Republic of Mauritania, Mauretania, Moritani, mr, Muritanya, Murutaane]
+      - label: Mauritius
+        alt_labels: [Maurice, MRI, MU, Moris, Republic of Mauritius]
+      - label: Melayu
+        alt_labels: [Kingdom of Melayu, Malay empire, Malay kingdom, Malayu empire, Malayu kingdom, Melayu empire, Melayu kingdom, Melayu Kingdom]
+      - label: Mexico
+        alt_labels: [United Mexican States, mx, MXN, Mexican Republic, Mexican United States, US of M, United States of Mexico]
+      - label: Moldova
+        alt_labels: [Moldavia, Republic of Moldova, Republica Moldova]
+      - label: Monaco
+        alt_labels: [mc, "Fort-Hercule", Mùnegu, Principality and Diocese of Monaco, Principality of Monaco, Principato di Monaco, Principatu de Mu̍negu, Prinçipatu de Mùnegu, Principauté de Monaco]
+      - label: Mongolia
+        alt_labels: [Mongol State, State of Mongolia]
+      - label: Montenegro
+      - label: Morocco
+        alt_labels: [ma, "al-Maġrib", Kingdom of Morocco, Lmaġrib, MAR, Maroc, Marocco]
+      - label: Mozambique
+        alt_labels: [Moçambique, MOZ, mz, MZ, Republic of Mozambique, República de Moçambique]
+      - label: Myanmar
+        alt_labels: [Burma, Union of Burma, Republic of the Union of Myanmar]
+      - label: Namibia
+        alt_labels: [na, Republic of Namibia]
+      - label: Nauru
+        alt_labels: [Pleasant Island, nr, Naoero, Republic of Nauru]
+      - label: Nepal
+        alt_labels: [Palpa, Balbo, Nekbal, "Bal-bo", "Bal-po'i yul", "Bal-yul", Balpo, "Balpo-yul", Federal Democratic Republic of Nepal, Naipál, Naipala, Naipála, "Ne-pel", Necbal, Nehpal, "Nei-pal", Nekpal, Népaal, Nepál, Népál, Nepall, Nepaul, Nercerri, "Ni-po-lo", "Ni-po-louo", Niepal, Nipal, "Pa-eul-pou", "Pa-le-pou", "Pa-lo-pou", "Pai-pou", "Paï-pou", Palpou]
+      - label: Netherlands
+        alt_labels: [Nederland, Holland, the Netherlands]
+      - label: New Zealand
+        alt_labels: [nz, Dominion of New Zealand, Aotearoa New Zealand]
+      - label: Nicaragua
+        alt_labels: [NCA, NI, NIC, ni, Republic of Nicaragua]
+      - label: Niger
+        alt_labels: [ne, Republic Niger, Republic of Niger, Republic of the Niger, The Niger]
+      - label: Nigeria
+        alt_labels: [Federal Republic of Nigeria, Naija]
+      - label: Niue
+        alt_labels: [nu, Niuē]
+      - label: North Korea
+        alt_labels: [DPR Korea, PRK, kp, "Democratic People's Republic of Korea", DPRK, N. Korea]
+      - label: North Macedonia
+        alt_labels: [Macedonia, Former Yugoslav Republic of Macedonia, FYR Macedonia, FYROM, Republic of Macedonia, Republic of North Macedonia]
+      - label: Northern Cyprus
+        alt_labels: [North Cyprus, North Cyprus Turkish Republic, Republic of Northern Cyprus, The Turkish Republic of Northern Cyprus, Turkish Cypriot constituent state, Turkish Cypriot state, Turkish Cyprus, Turkish Federative State of North Cyprus, Turkish occupied Cyprus, Turkish Republic of Cyprus, Turkish Republic of North Cyprus, TRNC, NCY]
+      - label: Norway
+        alt_labels: [Kingdom of Norway]
+      - label: Oman
+        alt_labels: [Uman, om, omn, Sultanate of Oman]
+      - label: Pahlavi Iran
+        alt_labels: [Imperial Iran, Imperial state of Iran, Pahlavi regime]
+      - label: Pakistan
+        alt_labels: [PAK, pk, Islamic Republic of Pakistan, Republic of Pakistan]
+      - label: Palau
+        alt_labels: [Belau, pw, Pellew, Peeloo, Pelew, Pelew islands, Republic of Belau, Republic of Palau]
+      - label: Palestine
+        alt_labels: [Palestinian Authority, Palestinian National Authority, State of Palestine, PSE]
+      - label: Panama
+        alt_labels: [pa, Republic of Panama]
+      - label: Papua New Guinea
+        alt_labels: [Independent State of Papua New Guinea, PNG, pg]
+      - label: Paraguay
+        alt_labels: [Heart of South America, Republic of Paraguay]
+      - label: Pasai
+        alt_labels: [ocean pasai]
+      - label: "People's Republic of China"
+        alt_labels: [China, RPC, cn, Red China, Communist China, China PR, P.R.C., PR China, The PRC]
+      - label: Peru
+        alt_labels: [per, pe, Republic of Peru, Republica del Peru, República del Perú]
+      - label: Philippines
+        alt_labels: [RP, Republic of the Philippines, Philippine Islands, The Philippines]
+      - label: Poland
+        alt_labels: [Republic of Poland]
+      - label: Portugal
+        alt_labels: [PRT, POR, Portuguese Republic]
+      - label: Principality of Waldeck
+        alt_labels: [Waldeck, Free State of Waldeck, County of Waldeck]
+      - label: Qatar
+        alt_labels: [qat, qa, State of Qatar]
+      - label: Republic of the Congo
+        alt_labels: [Congo, CGO, cg, Congo (Brazzaville), Congo Republic, "Congo-Brazzaville", Rep. Congo, Republic of Congo, Republique du Congo, République du Congo]
+      - label: Romania
+        alt_labels: [Roumania, ro, Rumania, România]
+      - label: Russia
+        alt_labels: [Russian Federation, Federation of Russia]
+      - label: Rwanda
+        alt_labels: [Republic of Rwanda, The Land of a Thousand Hills]
+      - label: Saint Kitts and Nevis
+        alt_labels: [SKN, Federation of Saint Christopher and Nevis, Federation of Saint Kitts and Nevis, "Kitts & Nevis", Kitts and Nevis, Saint Christopher and Nevis, "St Kitts & Nevis", St Kitts and Nevis, "St. Kitts & Nevis", St. Kitts and Nevis]
+      - label: Saint Lucia
+        alt_labels: [lca, Hewanorra, Iyonola, lc, St Lucia, St. Lucia]
+      - label: Saint Vincent and the Grenadines
+        alt_labels: [St. Vincent, St Vincent, Saint Vincent, vc, St Vincent and the Grenadines, St. Vincent and the Grenadines, vct]
+      - label: Samoa
+        alt_labels: [ws, SAM, Western Samoa, Independent State of Samoa]
+      - label: Samudra Pasai
+        alt_labels: [Samudra Pasai Sultanate, Sultanate of Samudra Pasai, Samudra Pasai]
+      - label: San Marino
+        alt_labels: [SMR, sm, Most Serene Republic of San Marino]
+      - label: Saudi Arabia
+        alt_labels: [Kingdom of Saudi Arabia, Saudi, KSA]
+      - label: Senegal
+        alt_labels: [Republic of Senegal]
+      - label: Serbia
+        alt_labels: [Republic of Serbia]
+      - label: Seychelles
+        alt_labels: [Republic of Seychelles, sc, SEY]
+      - label: Sierra Leone
+        alt_labels: [Republic of Sierra Leone, sl, SLE]
+      - label: Singapore
+        alt_labels: [Garden City, SG, SIN, sg, SGP, Lion City, Singapore City, Republic of Singapore, "S'pore"]
+      - label: Sint Maarten
+        alt_labels: [Saint Martin, Sint Maarten (Dutch part), St Martin, SX, "NL-SX", Saint Martin (Dutch part), Sint Martin, St. Maarten, sxm]
+      - label: Slovakia
+        alt_labels: [SVK, SK, Slovak Republic]
+      - label: Slovenia
+        alt_labels: [si, svn, Slovenija, Republic of Slovenia, Republika Slovenija, slo]
+      - label: Solomon Islands
+        alt_labels: [SOL, sb]
+      - label: Somalia
+        alt_labels: [Federal Republic of Somalia]
+      - label: Somaliland
+        alt_labels: [Republic of Somaliland]
+      - label: South Africa
+        alt_labels: [SA, RSA, R.S.A., Republic of South Africa, zaf]
+      - label: South Korea
+        alt_labels: [Republic of Korea, Silla, Choson, Korea (South), Hanguk, Daehan Minguk, Daehanminguk, Korea Republic, Rep. Korea, S. Korea]
+      - label: South Sudan
+        alt_labels: [ss, SSD, Southern Sudan, Republic of South Sudan]
+      - label: Spain
+        alt_labels: [Kingdom of Spain]
+      - label: Sri Lanka
+        alt_labels: [Ceylan, ce, Serendib, Taprobane, sri, Srilanka, Democratic Socialist Republic of Sri Lanka, Lanka, Sri, lk, lke, Ceylon, SRI]
+      - label: Sudan
+        alt_labels: ["al-Sudan", "as-Sudan", "as-Sūdān", North Sudan, Republic of Sudan, Republic of the Sudan, sd, Soudan, SUD, the Sudan]
+      - label: Suriname
+        alt_labels: [sr, Surinam, Dutch Guiana, Republic of Surinam, Republic of Suriname, Surrinam]
+      - label: Sweden
+        alt_labels: [Kingdom of Sweden, se, Swedish Kingdom]
+      - label: Switzerland
+        alt_labels: [Swiss, Confoederatio Helvetica, Swiss Confederation]
+      - label: Syria
+        alt_labels: [Surya, Syrian Arab Republic]
+      - label: São Tomé and Príncipe
+        alt_labels: [STP, Sao Tome and Principe, Democratic Republic of São Tomé and Príncipe, "Sao Tome & Principe", São Tomé og Príncipe, st]
+      - label: Taiwan
+        alt_labels: [TPE, ROC, Chinese Taipei, TWN, Formosa, Republic of China (Taiwan), TW, Republic of China, Nationalist China, Blue China, Ilaod, Nanasian, Free China, Taiwan ROC, China, Republic, Chunghwa Minkuo, Chunghwa Minkwo, The ROC]
+      - label: Tajikistan
+        alt_labels: [Republic of Tajikistan, TJK, tj]
+      - label: Tanzania
+        alt_labels: [United Republic of Tanzania, Tanzania, United Republic of, tz, tza, United Republic of Tanganyika and Zanzibar]
+      - label: Thailand
+        alt_labels: [The Kingdom of Siam, The Kingdom of Thailand, Prathet Thai, "Ratcha-anachak Thai", Siam, th, Thai, THA, Kingdom of Siam, Kingdom of Thailand]
+      - label: The Bahamas
+        alt_labels: [Bahamas, bs, Bahama Islands, Commonwealth of the Bahamas, Commonwealth of The Bahamas, Bahamas, The]
+      - label: The Gambia
+        alt_labels: [Gambia, GAM, GM, Islamic Republic of the Gambia, Republic of the Gambia]
+      - label: "Timor-Leste"
+        alt_labels: [East Timor, TL, "Democratic Republic of Timor-Leste", Timor Leste]
+      - label: Togo
+        alt_labels: [tg, Togolese Republic]
+      - label: Tonga
+        alt_labels: [Kingdom of Tonga, Tonga Islands, Friendly Islands, to, TGA]
+      - label: Trinidad and Tobago
+        alt_labels: [TTO, TRI, Republic of Trinidad and Tobago, tt, "Trinidad & Tobago"]
+      - label: Tunisia
+        alt_labels: [TUN, tn, Republic of Tunisia, Tunisian Republic]
+      - label: Turkey
+        alt_labels: [Republic of Turkey, Republic of Türkiye]
+      - label: Turkmenistan
+        alt_labels: [TKM, tm, Turkmenia]
+      - label: Tuvalu
+        alt_labels: [tv, TUV, Ellice Islands]
+      - label: Uganda
+        alt_labels: ["+256", Ouganda, Pearl of Africa, Republic of Uganda, The Republic of Uganda, ug, UG, UGA, Ugandah]
+      - label: Ukraine
+        alt_labels: [Ukrainia, Ukraina, Ukr., Ukraïna]
+      - label: United Arab Emirates
+        alt_labels: [Emirates, ae, the United Arab Emirates, the Emirates, the U.A.E., the UAE, U.A.E.]
+      - label: United Kingdom
+        alt_labels: [the United Kingdom of Great Britain and Northern Ireland, G B, Great Britain and Northern Ireland, U K, United Kingdom of Great Britain and Northern Ireland, Great Britain, the UK]
+      - label: United States
+        alt_labels: [America, the United States, United States of America, the USA, Murica, U.S.A., U.S., Merica, the States, the U.S., the U.S. of A, the U.S. of America, the U.S.A., the United States of America, the US, the US of A, the US of America, U. S., U. S. A., U.S. of America, US of A, US of America]
+      - label: Uruguay
+        alt_labels: [uy, URU, Eastern Republic of Uruguay, Oriental Republic of Uruguay]
+      - label: Uzbekistan
+        alt_labels: [Republic of Uzbekistan]
+      - label: Vanuatu
+        alt_labels: [van, VAN, vu, Republic of Vanuatu, vut]
+      - label: Vatican City
+        alt_labels: [vat, Vatican, The Vatican, Holy See, Papal State, Città del Vaticano, Civitas Vaticana, State of Vatican City, Stato della Città del Vaticano, Status Civitatis Vaticanae, va, Vatican City State]
+      - label: Venezuela
+        alt_labels: [Republic of Venezuela, Bolivarian Republic of Venezuela, BR Venezuela]
+      - label: Vietnam
+        alt_labels: [VNM, VN, Viet Nam, SRV, VIE, Socialist Republic of Viet Nam, Socialist Republic of Vietnam, Việt Nam]
+      - label: Yemen
+        alt_labels: [ye, YEM, YE, Rep. Yemen, Republic of Yemen]
+      - label: Zambia
+        alt_labels: [Zed, ZAM, zm, Republic of Zambia]
+      - label: Zimbabwe
+        alt_labels: [Rhodesia, Southern Rhodesia, Zimbabwe Rhodesia, Republic of Zimbabwe]
+      - label: "sub-Roman Britain"
+        alt_labels: ["Post-Roman Britain"]
+  - domain_name: us_states
+    domain_label: us_state
+    source: wikidata
+    wikidata_qid: Q35657
+    member_count: 50
+    members:
+      - label: Alabama
+        alt_labels: ["01", Ala, AL, Bama, Ala., Heart of Dixie, State of Alabama, The Yellowhammer State, "US-AL", Yellowhammer State]
+      - label: Alaska
+        alt_labels: ["02", The Last Frontier, AK, Russian America, State of Alaska, Alaska, United States, "US-AK"]
+      - label: Arizona
+        alt_labels: ["04", AZ, Ariz., Arizona, United States, Grand Canyon State, State of Arizona, The Grand Canyon State, "US-AZ"]
+      - label: Arkansas
+        alt_labels: ["05", AR, "AR-kən-saw", Ark., Arkansas, United States, Arkansaw, Arkensaw, ARkənsaw, State of Arkansas, The Natural State, "US-AR"]
+      - label: California
+        alt_labels: ["06", The Golden State, CA, Golden State, State of California, California, United States, Cal., Cali., Calif., "US-CA"]
+      - label: Colorado
+        alt_labels: ["08", CO, Centennial State, Colo., Colorado, United States, State of Colorado, "US-CO"]
+      - label: Connecticut
+        alt_labels: ["09", CT, Constitution State, The Constitution State, 5th State, Conn., Connecticut (state), Connecticut (U.S. state), Connecticut, U.S., Connecticut, United States, Conneticut, CT, USA, State of Connecticut, The Nutmeg State, "US-CT", Nutmeg State]
+      - label: Delaware
+        alt_labels: ["10", The Diamond State, DE, Blue Hen State, Delaware, United States, State of Delaware, The First State, The Small Wonder, "US-DE"]
+      - label: Florida
+        alt_labels: ["12", Sunshine State, FL, The Sunshine State, Fla., Florida, United States, Peninsular State, State of Florida, The Gator State, "US-FL"]
+      - label: Georgia
+        alt_labels: ["13", Georgia, United States, The Empire State of the South, The Goober State, The Peach State, "US-GA", GA, State of Georgia]
+      - label: Hawaii
+        alt_labels: ["15", Owhyhee, Owyhee, Kaimana Hila, Hawaii State, Hawaii, United States, State of Hawaii, The Aloha State]
+      - label: Idaho
+        alt_labels: ["16", ID, Gem State, Idaho, United States, Potato State, State of Idaho, "US-ID"]
+      - label: Illinois
+        alt_labels: ["17", Ill., Illinois, United States, Ills., Lincoln State, State of Illinois, The Land of Lincoln, The Prairie State, "US-IL", Prairie State, Land of Lincoln, IL]
+      - label: Indiana
+        alt_labels: ["18", IN, Hoosier State, Indiana, United States, Ind., State of Indiana, "US-IN"]
+      - label: Iowa
+        alt_labels: ["19", IA, "Hawk-eye State", Iowa, United States, State of Iowa, The Land Between Two Rivers, "US-IA"]
+      - label: Kansas
+        alt_labels: ["20", KS, Kan., Kans., Kansas, United States of America, State of Kansas, Sunflower State, "US-KS"]
+      - label: Kentucky
+        alt_labels: ["21", KY, Bluegrass State, Commonwealth of Kentucky, Kentucky, United States, Ky., "US-KY"]
+      - label: Louisiana
+        alt_labels: ["22", LA, Pelican State, 18th State, Louisiana, United States, State of Louisiana, "US-LA"]
+      - label: Maine
+        alt_labels: ["23", ME, State of Maine, Maine, United States, The Pine Tree State, "US-ME"]
+      - label: Maryland
+        alt_labels: ["24", MD, Md., Maryland, United States, Old Line State, State of Maryland, "US-MD"]
+      - label: Massachusetts
+        alt_labels: ["25", MA, Mass., Massachusetts, United States, Bay State, Commonwealth of Massachusetts, 6th State, Commonwealth of MA, Massachusetts (U.S. state), Massachusetts state, Masshole Commonwealth, State of Massachusetts, Taxachusetts, The Bay State, The Commonwealth of Massachusetts, "US-MA"]
+      - label: Michigan
+        alt_labels: ["26", MI, Wolverine State, Great Lakes State, Mich., Michigan, United States, State of Michigan, "US-MI"]
+      - label: Minnesota
+        alt_labels: ["27", MN, Land of 10, 000 Lakes, Minn., Minnesota, United States, North Star State, State of Minnesota, "US-MN"]
+      - label: Mississippi
+        alt_labels: ["28", MS, Magnolia State, Miss., Mississippi (state), Mississippi, United States, State of Mississippi, "US-MS"]
+      - label: Missouri
+        alt_labels: ["29", MO, Missouri, United States, Mo., State of Missouri, The Show Me State, "US-MO"]
+      - label: Montana
+        alt_labels: ["30", MT, Mont., Big Sky Country, Montana, United States, State of Montana, Treasure State, "US-MT"]
+      - label: Nebraska
+        alt_labels: ["31", NE, Cornhusker State, Neb., Nebr., Nebraska, United States, State of Nebraska, "US-NE"]
+      - label: Nevada
+        alt_labels: ["32", The Silver State, NV, Silver State, Nev., Nevada, United States, State of Nevada, "US-NV"]
+      - label: New Hampshire
+        alt_labels: ["33", State of New Hampshire, "US-NH", NH, N.H., Granite State, The Granite State, New Hampshire, United States]
+      - label: New Jersey
+        alt_labels: ["34", Jersey, NJ, Garden State, Iersey, N.J., New Iersey, New Jersey, United States, State of New Jersey, the Garden State, the State of New Jersey, "US-NJ"]
+      - label: New Mexico
+        alt_labels: ["35", Land of Enchantment, NM, N.M., N. Mex., New Mexico, United States, State of New Mexico, "US-NM"]
+      - label: New York
+        alt_labels: ["36", Empire State, The Empire State, New York (state), New York state, New York, United States, NY, NY state, NYS, State of New York, "US-NY"]
+      - label: North Carolina
+        alt_labels: ["37", NC, United States, North Carolina (US), North Carolina, United States, State of North Carolina, Tar Heel State, The Tar Heel State]
+      - label: North Dakota
+        alt_labels: ["38", ND, N.D., Flickertail State, N. Dak., N. Dakota, NoDak, North Dakota, United States, Peace Garden State, Roughrider State, State of North Dakota, "US-ND"]
+      - label: Ohio
+        alt_labels: ["39", OH, Buckeye State, Ohio, United States, State of Ohio, "US-OH"]
+      - label: Oklahoma
+        alt_labels: ["40", OK, Okla., Oklahoma, United States, State of Oklahoma, The Sooner State, "US-OK"]
+      - label: Oregon
+        alt_labels: ["41", OR, Oregon, United States, Ore., Oreg., State of Oregon, The Beaver State, "US-OR"]
+      - label: Pennsylvania
+        alt_labels: ["42", PA, Commonwealth of Pennsylvania, Keystone State, Pa., Penna., Pennsylvania, United States, State of Pennsylvania, "US-PA"]
+      - label: Rhode Island
+        alt_labels: ["44", RI, 13th State, Little Rhody, Ocean State, Providence Plantations, Rhode Island (state), Rhode Island (U.S. state), Rhode Island and Providence Plantations, Rhode Island State, Rhode Island, United States, Road Island, State of Rhode Island, State of Rhode Island and Providence Plantations, The Ocean State, The State of Rhode Island and Providence Plantations, "US-RI", Little Rhodie]
+      - label: South Carolina
+        alt_labels: ["45", S.C., SC, S. C., Palmetto State, South Carolina, United States, State of South Carolina, "US-SC"]
+      - label: South Dakota
+        alt_labels: ["46", SD, S. Dak., S. Dakota, S.D., SoDak, South Dakota, United States, State of South Dakota, The Coyote State, The Mount Rushmore State, "US-SD"]
+      - label: Tennessee
+        alt_labels: ["47", TN, State of Tennessee, Tenn., Tennessee, United States, The Volunteer State, "US-TN", Volunteer State]
+      - label: Texas
+        alt_labels: ["48", TX, Lone Star State, State of Texas, Tex., Texas, United States, "US-TX"]
+      - label: Utah
+        alt_labels: ["49", UT, Beehive State, State of Utah, "US-UT", Utah, United States, Mormon State]
+      - label: Vermont
+        alt_labels: ["50", VT, State of Vermont, The Green Mountain State, "US-VT", Vermont, United States, Vt.]
+      - label: Virginia
+        alt_labels: ["51", VA, Old Dominion, Commonwealth of Virginia, State of Virginia, "US-VA", Va., Virginia, United States]
+      - label: Washington
+        alt_labels: ["53", WA, Evergreen State, State of Washington, "US-WA", Washington (state), Washington State]
+      - label: West Virginia
+        alt_labels: ["54", WV, Almost Heaven, State of West Virginia, The Mountain State, "US-WV", W. Va., W.Va., West Virginia, United States]
+      - label: Wisconsin
+        alt_labels: ["55", WI, Badger State, State of Wisconsin, "US-WI", Wis., Wisconsin, United States]
+      - label: Wyoming
+        alt_labels: ["56", Big Wyoming, State of Wyoming, The Cowboy State, The Equality State, "US-WY", WY, Wyo, Wyo., Wyoming, United States]
+  - domain_name: currencies
+    domain_label: currency
+    source: wikidata
+    wikidata_qid: Q8142
+    member_count: 180
+    members:
+      - label: Czechoslovak koruna
+        alt_labels: ["200", CSK]
+      - label: Czech koruna
+        alt_labels: ["203", CZK]
+      - label: United Arab Emirates dirham
+        alt_labels: [AED, "Dirham (1973-date)", Emirati dirham, U.A.E. dirham, UAE dirham]
+      - label: afghani
+        alt_labels: [AFN, ؋, Afghan afghani]
+      - label: Albanian lek
+        alt_labels: [ALL, Lek]
+      - label: Armenian dram
+        alt_labels: [AMD, dram]
+      - label: Netherlands Antillean guilder
+        alt_labels: [f, ANG, ƒ, "Gulden (1828-date)", NAf, NAƒ]
+      - label: kwanza
+        alt_labels: [AOA, Angolan kwanza, Kz]
+      - label: Argentine convertible peso
+        alt_labels: [ARS, peso convertible Argentina]
+      - label: Australian dollar
+        alt_labels: [dollar, dollars, $, AUD, A$, AU$, Aussie dollar]
+      - label: Aruban florin
+        alt_labels: [AWG, Afl.]
+      - label: Azerbaijani manat
+        alt_labels: [Azerbaijan manat, manat, AZN]
+      - label: convertible mark
+        alt_labels: [BAM, mark]
+      - label: Barbadian dollar
+        alt_labels: [BBD]
+      - label: Bangladeshi taka
+        alt_labels: [BDT, taka]
+      - label: Bulgarian lev
+        alt_labels: [BGN, BGK, Lev, BGL, BGJ, lev, Bulgarian lev (fourth)]
+      - label: Bahraini dinar
+        alt_labels: [BHD]
+      - label: Burundian franc
+        alt_labels: [BIF]
+      - label: Bermudian dollar
+        alt_labels: [BMD]
+      - label: Brunei dollar
+        alt_labels: [BND, $, B$]
+      - label: boliviano
+        alt_labels: [BOB, Bolivian boliviano, second boliviano]
+      - label: MVDOL
+        alt_labels: [BOV, Mvdol]
+      - label: Brazilian real
+        alt_labels: [BRL]
+      - label: Bahamian dollar
+        alt_labels: [BSD]
+      - label: ngultrum
+        alt_labels: [BTN, Bhutan currency, Bhutanese ngultrum]
+      - label: Botswana pula
+        alt_labels: [BWP]
+      - label: Belarusian ruble
+        alt_labels: [BYN, Br, third Belarusian ruble]
+      - label: Belize dollar
+        alt_labels: [$, BZD, BZ$]
+      - label: Canadian dollar
+        alt_labels: [C$, CA$, dollar, CAD, $]
+      - label: Congolese franc
+        alt_labels: [CDF, Belgian Congolese franc, Franc Congolais]
+      - label: Swiss franc
+        alt_labels: [CHF, Franc, Chf, CHF (Swiss Franc), Confœderatio Helvetica Franc, Franc suisse, Franco svizzero, S₣, Schweizer Franken, Swiss franco, Swiss francs, Swiss Frank, Swiss Franken]
+      - label: Chilean peso
+        alt_labels: [CLP]
+      - label: renminbi (offshore)
+        alt_labels: [CNH, ¥, Chinese Yuan (offshore), yuan (offshore)]
+      - label: renminbi
+        alt_labels: [CNY, yuan, Chinese Yuan, renminbi, yuan renminbi, yuan RMB]
+      - label: Colombian peso
+        alt_labels: [COP, peso, $, CO $, CO$, COL$, Colomb peso]
+      - label: Costa Rican colón
+        alt_labels: [CRC, Costa Rican colon]
+      - label: Czechoslovak koruna
+        alt_labels: [CSK]
+      - label: convertible peso
+        alt_labels: [CUC, chavito, "Convertible peso (1994-2020)"]
+      - label: Cuban peso
+        alt_labels: [CUP, Cuban peso]
+      - label: Cape Verdean escudo
+        alt_labels: [CVE, Cape Verde escudo]
+      - label: Czech koruna
+        alt_labels: [CZK]
+      - label: Djiboutian franc
+        alt_labels: [DJF, Djibouti Franc]
+      - label: Danish krone
+        alt_labels: [DKK, kr]
+      - label: Dominican peso
+        alt_labels: [DOP, Dominican peso oro, peso oro]
+      - label: Algerian dinar
+        alt_labels: [dinar, DZD]
+      - label: Egyptian pound
+        alt_labels: [EGP]
+      - label: nakfa
+        alt_labels: [ERN, Eritrean nakfa, Nkf]
+      - label: bir
+        alt_labels: [ETB, Ethiopian birr, Ethiopian dollar]
+      - label: euro
+        alt_labels: [EUR, euros]
+      - label: Fijian dollar
+        alt_labels: [FJD, Fijan dollar, Fiji Dollar]
+      - label: Falkland Islands pound
+        alt_labels: [FKP]
+      - label: pound sterling
+        alt_labels: [British pound, Great British pound, pound, penny, sterling, pounds, quid, pence, £, GBP]
+      - label: Georgian lari
+        alt_labels: [Lari, GEL, Tetri, Georgian kupon lari]
+      - label: Ghana cedi
+        alt_labels: [GHS, cedi, GH₵]
+      - label: Gibraltar pound
+        alt_labels: [GIP]
+      - label: dalasi
+        alt_labels: [GMD, Gambian dalasi]
+      - label: Guinean franc
+        alt_labels: [GNF]
+      - label: quetzal
+        alt_labels: [GTQ, Guatemala quetzal, "Quetzal (1925-date)"]
+      - label: Guyanese dollar
+        alt_labels: [GYD, Money of Guyana]
+      - label: Hong Kong dollar
+        alt_labels: [dollar, dollars, $, HKD, HK$]
+      - label: Honduran lempira
+        alt_labels: [HNL]
+      - label: gourde
+        alt_labels: [HTG, Haitian Gourde]
+      - label: forint
+        alt_labels: [Ft, HUF, Hungarian forint]
+      - label: rupiah
+        alt_labels: [IDR, Indonesian rupiah, "Rupiah (1965-date)"]
+      - label: new shekel
+        alt_labels: [shekel, ILS, NIS, ₪, Israeli new shekel, Israeli new sheqel, new Israeli shekel, new Israeli sheqel, new sheqel]
+      - label: Indian rupee
+        alt_labels: [INR, Rupee, ₹, Rupaya]
+      - label: Iraqi dinar
+        alt_labels: [IQD, ID]
+      - label: Iranian rial
+        alt_labels: [IRR]
+      - label: Icelandic króna
+        alt_labels: [ISK, kr, Icelandic krona, króna]
+      - label: Jamaican dollar
+        alt_labels: [Jay, $, JMD, J$]
+      - label: Jordanian dinar
+        alt_labels: [JOD, "Dinar (1949-date)"]
+      - label: yen
+        alt_labels: [JPY, Japanese yen]
+      - label: Kenyan shilling
+        alt_labels: [KES, Shilling]
+      - label: Kyrgyz som
+        alt_labels: [KGS, som]
+      - label: riel
+        alt_labels: [KHR, ៛, Cambodian riel]
+      - label: Comorian franc
+        alt_labels: [KMF]
+      - label: North Korean won
+        alt_labels: [KPW]
+      - label: won
+        alt_labels: [KRW, ￦, south korea won]
+      - label: Kuwaiti dinar
+        alt_labels: [KWD]
+      - label: Cayman Islands dollar
+        alt_labels: [KYD, "Dollar (1972-date)"]
+      - label: Kazakhstani tenge
+        alt_labels: [KZT]
+      - label: Lao kip
+        alt_labels: [kip, LAK, ₭, ₭N]
+      - label: Lebanese pound
+        alt_labels: [LBP, 1000 lira, "Lebanese pound (1939-date)"]
+      - label: Sri Lankan rupee
+        alt_labels: [LKR, SLRs, Sri Lanka Rupee, Sri Lankan rupees, Tamil rupee]
+      - label: Liberian dollar
+        alt_labels: [LRD]
+      - label: loti
+        alt_labels: [LSL, Lesotho loti]
+      - label: Libyan dinar
+        alt_labels: [dinar, LYD]
+      - label: Moroccan dirham
+        alt_labels: [MAD, Maza]
+      - label: Moldovan leu
+        alt_labels: [MDL, leu]
+      - label: ariary
+        alt_labels: [MGA, Madagascan ariary, Malagasy ariary]
+      - label: Macedonian denar
+        alt_labels: [denar, MKD, North Macedonian denar]
+      - label: kyat
+        alt_labels: [K, MMK, Burmese kyat, Ks, Myanmar kyat]
+      - label: Mongolian tögrög
+        alt_labels: [MNT, Mongolian tögrög, Mongolian tughrik, Mongolian tugrik]
+      - label: Macanese pataca
+        alt_labels: [MOP, MOP$]
+      - label: Mauritanian ouguiya
+        alt_labels: [UM, MRU, ouguiya]
+      - label: Maltese pound (decimal)
+        alt_labels: [MTP, Maltese lira, MTL]
+      - label: Mauritian rupee
+        alt_labels: [MUR, Mauritius rupee, "Rupee (1877-date)"]
+      - label: Maldivian rufiyaa
+        alt_labels: [MVR, rufiyaa]
+      - label: Malawian kwacha
+        alt_labels: [MWK, "Kwacha (1971-date)", Malawi kwacha]
+      - label: peso
+        alt_labels: [Mexican peso, MX$, MXN, currency of Mexico, Mexican centavo, Mexican new peso, Mexican nuevo peso]
+      - label: Malaysian ringgit
+        alt_labels: [RM, MYR, Ringgit Malaysia]
+      - label: Mozambican metical
+        alt_labels: [MZN, Metical]
+      - label: Namibian dollar
+        alt_labels: [NAD, $, N$]
+      - label: naira
+        alt_labels: [NGN, ₦, Nigerian naira]
+      - label: Nicaraguan córdoba
+        alt_labels: [NIO, NIC, Cordoba Oro, Mariana Montserrat, Nicaraguan cordoba]
+      - label: Norwegian krone
+        alt_labels: [krone, kr, NOK]
+      - label: Nepalese rupee
+        alt_labels: [NPR, "Rupee (1932-date)"]
+      - label: New Zealand dollar
+        alt_labels: [dollar, dollars, $, NZ$, NZD]
+      - label: Omani rial
+        alt_labels: [OMR]
+      - label: Panamanian balboa
+        alt_labels: [PAB]
+      - label: Nuevo sol
+        alt_labels: [PEN]
+      - label: kina
+        alt_labels: [PGK, Papua New Guinean kina]
+      - label: Philippine peso
+        alt_labels: [peso, PHP, ₱, Philippine piso, piso]
+      - label: Pakistani rupee
+        alt_labels: [PKR]
+      - label: złoty
+        alt_labels: [Polish zloty, Polish złoty, zł, PLN, zloty]
+      - label: złoty
+        alt_labels: [PLZ, Polish zloty, Polish złoty, zł, PLN, zloty]
+      - label: Paraguayan guaraní
+        alt_labels: [PYG, "Guarani (1944-date)", Paraguayan guarani]
+      - label: Qatari riyal
+        alt_labels: [QAR, Qatar riyal]
+      - label: Romanian Leu
+        alt_labels: [L, RON, Leu românesc]
+      - label: Serbian dinar
+        alt_labels: [dinar, RSD, Serbia dinar]
+      - label: Russian ruble
+        alt_labels: [ruble, RUB]
+      - label: Rwandan franc
+        alt_labels: [RF, RWF, FRw]
+      - label: Saudi riyal
+        alt_labels: [riyal, SAR]
+      - label: Solomon Islands dollar
+        alt_labels: [SBD, Solomon Dollar]
+      - label: Seychellois rupee
+        alt_labels: [SCR, Rupee, Seychelles Rupee, SRe]
+      - label: Sudanese pound
+        alt_labels: [SDG, Sudanese Pound]
+      - label: Swedish krona
+        alt_labels: [SEK]
+      - label: Singapore dollar
+        alt_labels: [dollar, dollars, $, SGD, Ringgit Singapore, S$]
+      - label: Saint Helena pound
+        alt_labels: [SHP]
+      - label: leone
+        alt_labels: [SLE, SLL, Sierra Leonean leone]
+      - label: Sammarinese lira
+        alt_labels: [SML]
+      - label: Somali shilling
+        alt_labels: [SOS, Currency of somalia, Sh.So.]
+      - label: Surinamese dollar
+        alt_labels: [$, SRD]
+      - label: South Sudanese pound
+        alt_labels: [SSP]
+      - label: São Tomé and Príncipe dobra
+        alt_labels: [STN]
+      - label: Salvadoran colón
+        alt_labels: [SVC, Colón, Colon, Salvadoran colon, Salvadorean colon, Salvadorean colón]
+      - label: Syrian pound
+        alt_labels: [LS, SYP, Syrian lira]
+      - label: lilangeni
+        alt_labels: [SZL, emalangeni, Eswatini lilangeni, Swazi lilangeni, Swaziland lilangeni]
+      - label: baht
+        alt_labels: [THB, ฿, Siamese tical, Thai baht, tical]
+      - label: Tajikistani somoni
+        alt_labels: [TJS, currency of Tajikistan, Somoni, Tajik Somoni]
+      - label: Turkmenistan new manat
+        alt_labels: [TMT, Turkmenistani new manat]
+      - label: Tunisian dinar
+        alt_labels: [TND, Tunis dinar]
+      - label: Tongan paʻanga
+        alt_labels: [TOP, Pa anga, "Pa'anga", Tonga pa`anga, Tonga paʻanga, Tongan pa`anga]
+      - label: Turkish lira
+        alt_labels: [TRL, TRY, ₺]
+      - label: Trinidad and Tobago dollar
+        alt_labels: [TTD]
+      - label: New Taiwan dollar
+        alt_labels: [$, NTD, TWD, NT$]
+      - label: Tanzanian shilling
+        alt_labels: [Shilingi, TZS, Tanzanian schilling, Tanzanian shilingi, TSh]
+      - label: hryvnia
+        alt_labels: [UAH, hryvnya, Ukrainian hryvnia]
+      - label: Ugandan shilling
+        alt_labels: [Uganda shilling, UGX, USh]
+      - label: United States dollar
+        alt_labels: [dollar, buck, dollars, American dollar, greenback, $, USD, $USD, American dollars, American money, U. S. Dollar, U.S. Dollar, United States dollars, US $, US dollar, US dollars, "US-$", US$, USA dollar, USA dollars, USD$]
+      - label: Uruguay Peso en Unidades Indexadas
+        alt_labels: [UI, UYI]
+      - label: Uruguayan peso
+        alt_labels: [UYU]
+      - label: Unidad Previsional
+        alt_labels: [UP, UYW]
+      - label: Uzbek som
+        alt_labels: [soʻm, UZS, Uzbek sum]
+      - label: Vatican lira
+        alt_labels: [VAL]
+      - label: sovereign bolivar
+        alt_labels: [VES, bolivar, Bs.S]
+      - label: Vietnamese đồng
+        alt_labels: [VND, ₫, đồng]
+      - label: Vanuatu vatus
+        alt_labels: [VUV, Vatu]
+      - label: Samoan tālā
+        alt_labels: [Tala, WST, Samoan Tala, Tālā, "Tala (1967-date)", WS$]
+      - label: Arab accounting dinar
+        alt_labels: [AAD, XAD]
+      - label: Central African CFA franc
+        alt_labels: [XAF, franc CFA]
+      - label: silver as an investment
+        alt_labels: [silver, XAG, silver as currency]
+      - label: European Composite Unit
+        alt_labels: [EURCO, XBA]
+      - label: European Monetary Unit
+        alt_labels: ["E.M.U.-6", "EMU-6", European Unit of Account currency fund 6, XBB]
+      - label: European Unit of Account 9
+        alt_labels: ["E.U.A.-9", "EUA-9", XBC]
+      - label: European Unit of Account 17
+        alt_labels: ["E.U.A.-17", "EUA-17", XBD]
+      - label: Eastern Caribbean dollar
+        alt_labels: [XCD]
+      - label: Caribbean guilder
+        alt_labels: [XCG]
+      - label: West African CFA franc
+        alt_labels: [XOF, BCEAO franc]
+      - label: palladium as an investment
+        alt_labels: [palladium, XPD, palladium as currency]
+      - label: CFP Franc
+        alt_labels: [franc, XPF, Franc Pacifique, Pacific Franc]
+      - label: SUCRE
+        alt_labels: [Sistema Unico de Compensacion Regional, Sistema Único de Compensación Regional, XSU]
+      - label: Yemeni Rial
+        alt_labels: [rial, YER, ريال]
+      - label: Yugoslav dinar
+        alt_labels: [YUD]
+      - label: Yugoslav dinar
+        alt_labels: [YUM]
+      - label: Yugoslav dinar
+        alt_labels: [YUN]
+      - label: rand
+        alt_labels: [ZAR, Rand, South African rand]
+      - label: Zambian Kwacha
+        alt_labels: [ZMW]
+      - label: Zimbabwe ZiG
+        alt_labels: [ZWG, ZiG, Zimbabwean gold]
+      - label: Zimbabwean dollar
+        alt_labels: [$, Z$, Zimdollar, ZWL, 2019 Zimbabwean dollar, 5th Zimbabwean dollar, fifth Zimbabwean dollar, Real Time Gross Settlement dollar, RTGS$, Zimbabwean dollar (2019)]
+  - domain_name: languages_major
+    domain_label: language
+    source: wikidata
+    wikidata_qid: Q34770
+    member_count: 45
+    members:
+      - label: Arabic
+        alt_labels: [ar, Arabic language, Arabian, Arabian language]
+      - label: Bashkir
+        alt_labels: [ba, Bashkir language, bashkort]
+      - label: Belarusian
+        alt_labels: [be, Bielorusian language, Belarussian language, Byelorussian, Belorussian, White Russian, Bielaruskaja, Belarus language, Belarusan, Belarusan language, Belarusian language, Belarussian, Belorusian, Belorusian language, Belorussian language, Bielarusian, Bielarusian language, Bielorusian, Bielorussian, Bielorussian language, Byelorussian language, White Russian language]
+      - label: Bokmål
+        alt_labels: [nb, Norwegian Bokmål, bokmaal, bokmal]
+      - label: Bulgarian
+        alt_labels: [bg, Bulgarian language, Bŭlgarski]
+      - label: Catalan
+        alt_labels: [ca, Catalan language, Valencià, Valencian, Algherese, Català, East Iberian, Alguerés, Alguerès, "Catalan-Valencian-Balearic"]
+      - label: English
+        alt_labels: [en, English (language), English language]
+      - label: French
+        alt_labels: [fr, French language]
+      - label: Galician
+        alt_labels: [gl, Galician language]
+      - label: Guarani
+        alt_labels: [gn, Guarani language, Guarani dialects]
+      - label: Haitian Creole
+        alt_labels: [ht, Haitian language, Haitian Creole language]
+      - label: Hebrew
+        alt_labels: [he, Hebrew language, Ivrit, Iwrit]
+      - label: Hungarian
+        alt_labels: [hu, Magyar, Hungarian language]
+      - label: Igbo
+        alt_labels: [ig, Igbo language]
+      - label: Indonesian
+        alt_labels: [id, Indonesian language, Bahasa, bahasa Indonesia]
+      - label: Javanese
+        alt_labels: [jv, Javanese language]
+      - label: Khmer
+        alt_labels: [km, Cambodian language, Central Khmer, Khmer language]
+      - label: Kurdish
+        alt_labels: [ku, Kurdish language, Kurdi, Kurdish dialects, Kurdish languages]
+      - label: Lao
+        alt_labels: [lo, Laotian, Lao language, Laotian language]
+      - label: Latvian
+        alt_labels: [lv, Lettish, Latvian language, Latviešu, Lettish language]
+      - label: Lithuanian
+        alt_labels: [lt, Lietuvių, Lithuanian language]
+      - label: Macedonian
+        alt_labels: [mk, Makedonski, Macedonian language, Slavic Macedonian, Slavomacedonian]
+      - label: Malay
+        alt_labels: [ms, Malay language, Malay macrolanguage, "Malay-Indonesian", Malay–Indonesian]
+      - label: Modern Greek
+        alt_labels: [Modern Greek language, el]
+      - label: Northern Ndebele
+        alt_labels: [Ndebele, Matabele, nd, isiNdebele, isiNdebele saseNyakatho, nde, North Ndebele, Sindebele, Zimbabwean Ndebele]
+      - label: Norwegian
+        alt_labels: ["no", Norwegian language]
+      - label: Nuosu
+        alt_labels: [Yi, ii, Nosu, Liangshan Yi, Northern Yi, Nuosu language, Sichuan Yi]
+      - label: Nynorsk
+        alt_labels: [nn, Norwegian Nynorsk, Neo Norwegian, New Norwegian]
+      - label: Odia
+        alt_labels: [or, Oriya, Odia language, Oriya language]
+      - label: Oromo
+        alt_labels: [Galla, om, Oromoo, Afaan Oromo, Afaan Oromoo, Oromiffa, Oromo language]
+      - label: Persian
+        alt_labels: [fa, Iranian, Persian language, Farsi language, Iranian language, "Farsic-Caucasian Tat", Farsic–Caucasian Tat]
+      - label: Punjabi
+        alt_labels: [pa, Panjabi language, Punjabi language, Panjabi]
+      - label: Russian
+        alt_labels: [ru, Russian language, Russkiy, Russkiy yazyk]
+      - label: Sango
+        alt_labels: [sag, sg, Sangho, Sango language]
+      - label: Serbian
+        alt_labels: [sr, Serbian language, Srpski]
+      - label: Slovak
+        alt_labels: [sk, Slovak language, Slovakian, Slovakian language]
+      - label: Spanish
+        alt_labels: [es, Spanish language, Castilian, Castilian language]
+      - label: Sundanese
+        alt_labels: [su, Sunda, Sundanese language]
+      - label: Swazi
+        alt_labels: [ss, Swati, siSwati, Swazi language]
+      - label: Swedish
+        alt_labels: [sv, Swedish language, Svenska, swed1254]
+      - label: Thai
+        alt_labels: [th, Siamese, Central Thai, Siamese language, Thai language]
+      - label: Tigrinya
+        alt_labels: [ti, Tigrigna, Tigrinja, Tigrinya alphabet, Tigrinya language]
+      - label: Tsonga
+        alt_labels: [ts, Changana, Shangana, Shangani, Xitsonga, Tsonga language, xiChangana, xiShangana]
+      - label: Tswana
+        alt_labels: [Bechuana, tn, Sechuana, Setswana, Tswana language]
+      - label: Zulu
+        alt_labels: [zu, isiZulu, Zulu language]
+  - domain_name: chemical_elements
+    domain_label: chemical_element
+    source: wikidata
+    wikidata_qid: Q11344
+    member_count: 174
+    members:
+      - label: actinium
+        alt_labels: [Ac]
+      - label: aluminium
+        alt_labels: [Al]
+      - label: americium
+        alt_labels: [Am]
+      - label: antimony
+        alt_labels: [Sb]
+      - label: argon
+        alt_labels: [Ar]
+      - label: arsenic
+        alt_labels: [As]
+      - label: astatine
+        alt_labels: [At]
+      - label: barium
+        alt_labels: [Ba]
+      - label: berkelium
+        alt_labels: [Bk]
+      - label: beryllium
+        alt_labels: [Be]
+      - label: bismuth
+        alt_labels: [Bi]
+      - label: bohrium
+        alt_labels: [Bh]
+      - label: boron
+        alt_labels: [B]
+      - label: bromine
+        alt_labels: [Br]
+      - label: cadmium
+        alt_labels: [Cd]
+      - label: caesium
+        alt_labels: [Cs]
+      - label: calcium
+        alt_labels: [Ca]
+      - label: californium
+        alt_labels: [Cf]
+      - label: carbon
+        alt_labels: [C]
+      - label: cerium
+        alt_labels: [Ce]
+      - label: chlorine
+        alt_labels: [Cl]
+      - label: chromium
+        alt_labels: [Cr]
+      - label: cobalt
+        alt_labels: [Co]
+      - label: copernicium
+        alt_labels: [Cn]
+      - label: copper
+        alt_labels: [Cu]
+      - label: curium
+        alt_labels: [Cm]
+      - label: darmstadtium
+        alt_labels: [Ds]
+      - label: dubnium
+        alt_labels: [Db]
+      - label: dysprosium
+        alt_labels: [Dy]
+      - label: einsteinium
+        alt_labels: [Es]
+      - label: erbium
+        alt_labels: [Er]
+      - label: europium
+        alt_labels: [Eu]
+      - label: fermium
+        alt_labels: [Fm]
+      - label: flerovium
+        alt_labels: [Fl]
+      - label: fluorine
+        alt_labels: [F]
+      - label: francium
+        alt_labels: [Fr]
+      - label: gadolinium
+        alt_labels: [Gd]
+      - label: gallium
+        alt_labels: [Ga]
+      - label: germanium
+        alt_labels: [Ge]
+      - label: gold
+        alt_labels: [Au]
+      - label: hafnium
+        alt_labels: [Hf]
+      - label: hassium
+        alt_labels: [Hs]
+      - label: helium
+        alt_labels: [He]
+      - label: holmium
+        alt_labels: [Ho]
+      - label: hydrogen
+        alt_labels: [H]
+      - label: indium
+        alt_labels: [In]
+      - label: iodine
+        alt_labels: [I]
+      - label: iridium
+        alt_labels: [Ir]
+      - label: iron
+        alt_labels: [Fe]
+      - label: krypton
+        alt_labels: [Kr]
+      - label: lanthanum
+        alt_labels: [La]
+      - label: lawrencium
+        alt_labels: [Lr]
+      - label: lead
+        alt_labels: [Pb]
+      - label: lithium
+        alt_labels: [Li]
+      - label: livermorium
+        alt_labels: [Lv]
+      - label: lutetium
+        alt_labels: [Lu]
+      - label: magnesium
+        alt_labels: [Mg]
+      - label: manganese
+        alt_labels: [Mn]
+      - label: meitnerium
+        alt_labels: [Mt]
+      - label: mendelevium
+        alt_labels: [Md]
+      - label: mercury
+        alt_labels: [Hg]
+      - label: molybdenum
+        alt_labels: [Mo]
+      - label: moscovium
+        alt_labels: [Mc]
+      - label: neodymium
+        alt_labels: [Nd]
+      - label: neon
+        alt_labels: [Ne]
+      - label: neptunium
+        alt_labels: [Np]
+      - label: nickel
+        alt_labels: [Ni]
+      - label: nihonium
+        alt_labels: [Nh]
+      - label: niobium
+        alt_labels: [Nb]
+      - label: nitrogen
+        alt_labels: [N]
+      - label: nobelium
+        alt_labels: ["No"]
+      - label: oganesson
+        alt_labels: [Og]
+      - label: osmium
+        alt_labels: [Os]
+      - label: oxygen
+        alt_labels: [O]
+      - label: palladium
+        alt_labels: [Pd]
+      - label: phosphorus
+        alt_labels: [P]
+      - label: platinum
+        alt_labels: [Pt]
+      - label: plutonium
+        alt_labels: [Pu]
+      - label: polonium
+        alt_labels: [Po]
+      - label: potassium
+        alt_labels: [K]
+      - label: praseodymium
+        alt_labels: [Pr]
+      - label: promethium
+        alt_labels: [Pm]
+      - label: protactinium
+        alt_labels: [Pa]
+      - label: radium
+        alt_labels: [Ra]
+      - label: radon
+        alt_labels: [Rn]
+      - label: rhenium
+        alt_labels: [Re]
+      - label: rhodium
+        alt_labels: [Rh]
+      - label: roentgenium
+        alt_labels: [Rg]
+      - label: rubidium
+        alt_labels: [Rb]
+      - label: ruthenium
+        alt_labels: [Ru]
+      - label: rutherfordium
+        alt_labels: [Rf]
+      - label: samarium
+        alt_labels: [Sm]
+      - label: scandium
+        alt_labels: [Sc]
+      - label: seaborgium
+        alt_labels: [Sg]
+      - label: selenium
+        alt_labels: [Se]
+      - label: silicon
+        alt_labels: [Si]
+      - label: silver
+        alt_labels: [Ag]
+      - label: sodium
+        alt_labels: [Na]
+      - label: strontium
+        alt_labels: [Sr]
+      - label: sulfur
+        alt_labels: [S]
+      - label: tantalum
+        alt_labels: [Ta]
+      - label: technetium
+        alt_labels: [Tc]
+      - label: tellurium
+        alt_labels: [Te]
+      - label: tennessine
+        alt_labels: [Ts]
+      - label: terbium
+        alt_labels: [Tb]
+      - label: thallium
+        alt_labels: [Tl]
+      - label: thorium
+        alt_labels: [Th]
+      - label: thulium
+        alt_labels: [Tm]
+      - label: tin
+        alt_labels: [Sn]
+      - label: titanium
+        alt_labels: [Ti]
+      - label: tungsten
+        alt_labels: [W]
+      - label: unbibium
+        alt_labels: [Ubb]
+      - label: unbiennium
+        alt_labels: [Ube]
+      - label: unbihexium
+        alt_labels: [Ubh]
+      - label: unbinilium
+        alt_labels: [Ubn]
+      - label: unbioctium
+        alt_labels: [Ubo]
+      - label: unbipentium
+        alt_labels: [Ubp]
+      - label: unbiquadium
+        alt_labels: [Ubq]
+      - label: unbiseptium
+        alt_labels: [Ubs]
+      - label: unbitrium
+        alt_labels: [Ubt]
+      - label: unbiunium
+        alt_labels: [Ubu]
+      - label: unhexbium
+        alt_labels: [Uhb]
+      - label: unhexennium
+        alt_labels: [Uhe]
+      - label: unhexhexium
+        alt_labels: [Uhh]
+      - label: unhexnilium
+        alt_labels: [Uhn]
+      - label: unhexoctium
+        alt_labels: [Uho]
+      - label: unhexpentium
+        alt_labels: [Uhp]
+      - label: unhexquadium
+        alt_labels: [Uhq]
+      - label: unhexseptium
+        alt_labels: [Uhs]
+      - label: unhextrium
+        alt_labels: [Uht]
+      - label: unhexunium
+        alt_labels: [Uhu]
+      - label: unoctquadium
+        alt_labels: [Uoq]
+      - label: unpentbium
+        alt_labels: [Upb]
+      - label: unpentennium
+        alt_labels: [Upe]
+      - label: unpenthexium
+        alt_labels: [Uph]
+      - label: unpentnilium
+        alt_labels: [Upn]
+      - label: unpentoctium
+        alt_labels: [Upo]
+      - label: unpentpentium
+        alt_labels: [Upp]
+      - label: unpentquadium
+        alt_labels: [Upq]
+      - label: unpentseptium
+        alt_labels: [Ups]
+      - label: unpenttrium
+        alt_labels: [Upt]
+      - label: unpentunium
+        alt_labels: [Upu]
+      - label: unquadbium
+        alt_labels: [Uqb]
+      - label: unquadennium
+        alt_labels: [Uqe]
+      - label: unquadhexium
+        alt_labels: [Uqh]
+      - label: unquadnilium
+        alt_labels: [Uqn]
+      - label: unquadoctium
+        alt_labels: [Uqo]
+      - label: unquadpentium
+        alt_labels: [Uqp]
+      - label: unquadquadium
+        alt_labels: [Uqq]
+      - label: unquadseptium
+        alt_labels: [Uqs]
+      - label: unquadtrium
+        alt_labels: [Uqt]
+      - label: unquadunium
+        alt_labels: [Uqu]
+      - label: unseptbium
+        alt_labels: [Usb]
+      - label: unseptnilium
+        alt_labels: [Usn]
+      - label: unsepttrium
+        alt_labels: [Ust]
+      - label: unseptunium
+        alt_labels: [Usu]
+      - label: untribium
+        alt_labels: [Utb]
+      - label: untriennium
+        alt_labels: [Ute]
+      - label: untrihexium
+        alt_labels: [Uth]
+      - label: untrinilium
+        alt_labels: [Utn]
+      - label: untrioctium
+        alt_labels: [Uto]
+      - label: untripentium
+        alt_labels: [Utp]
+      - label: untriquadium
+        alt_labels: [Utq]
+      - label: untriseptium
+        alt_labels: [Uts]
+      - label: untritrium
+        alt_labels: [Utt]
+      - label: untriunium
+        alt_labels: [Utu]
+      - label: ununennium
+        alt_labels: [Uue]
+      - label: uranium
+        alt_labels: [U]
+      - label: vanadium
+        alt_labels: [V]
+      - label: xenon
+        alt_labels: [Xe]
+      - label: ytterbium
+        alt_labels: [Yb]
+      - label: yttrium
+        alt_labels: [Y]
+      - label: zinc
+        alt_labels: [Zn]
+      - label: zirconium
+        alt_labels: [Zr]
+  - domain_name: months_long
+    domain_label: month
+    source: curated
+    member_count: 12
+    members:
+      - label: January
+      - label: February
+      - label: March
+      - label: April
+      - label: May
+      - label: June
+      - label: July
+      - label: August
+      - label: September
+      - label: October
+      - label: November
+      - label: December
+  - domain_name: months_short
+    domain_label: month
+    source: curated
+    member_count: 12
+    members:
+      - label: Jan
+      - label: Feb
+      - label: Mar
+      - label: Apr
+      - label: May
+      - label: Jun
+      - label: Jul
+      - label: Aug
+      - label: Sep
+      - label: Oct
+      - label: Nov
+      - label: Dec
+  - domain_name: days_long
+    domain_label: day_of_week
+    source: curated
+    member_count: 7
+    members:
+      - label: Monday
+      - label: Tuesday
+      - label: Wednesday
+      - label: Thursday
+      - label: Friday
+      - label: Saturday
+      - label: Sunday
+  - domain_name: days_short
+    domain_label: day_of_week
+    source: curated
+    member_count: 7
+    members:
+      - label: Mon
+      - label: Tue
+      - label: Wed
+      - label: Thu
+      - label: Fri
+      - label: Sat
+      - label: Sun
+  - domain_name: quarters
+    domain_label: quarter
+    source: curated
+    member_count: 8
+    members:
+      - label: Q1
+      - label: Q2
+      - label: Q3
+      - label: Q4
+      - label: Qtr1
+      - label: Qtr2
+      - label: Qtr3
+      - label: Qtr4
+  - domain_name: us_census_race
+    domain_label: race_ethnicity
+    source: "curated:us_census"
+    member_count: 9
+    members:
+      - label: White
+        alt_labels: [Caucasian]
+      - label: Black or African American
+        alt_labels: [Black, African American]
+      - label: American Indian or Alaska Native
+        alt_labels: [Native American, American Indian, Alaska Native, Indigenous]
+      - label: Asian
+      - label: Native Hawaiian or Other Pacific Islander
+        alt_labels: [Pacific Islander, Native Hawaiian, NHPI]
+      - label: Two or More Races
+        alt_labels: [Multiracial, "Multi-racial", Two or more]
+      - label: Hispanic or Latino
+        alt_labels: [Hispanic, Latino, Latina, Latinx]
+      - label: Not Hispanic or Latino
+        alt_labels: ["Non-Hispanic"]
+      - label: Some Other Race
+        alt_labels: [Other]
+  - domain_name: gender
+    domain_label: gender
+    source: curated
+    member_count: 5
+    members:
+      - label: Male
+        alt_labels: [M, Man, Men, Boy]
+      - label: Female
+        alt_labels: [F, Woman, Women, Girl]
+      - label: "Non-binary"
+        alt_labels: [Nonbinary, NB, Genderqueer]
+      - label: Other
+        alt_labels: [X]
+      - label: Unknown
+        alt_labels: [Not reported, Prefer not to say]
+  - domain_name: boolean_labels
+    domain_label: boolean
+    source: curated
+    member_count: 14
+    members:
+      - label: "Yes"
+      - label: "No"
+      - label: "True"
+      - label: "False"
+      - label: Y
+      - label: N
+      - label: T
+      - label: F
+      - label: "On"
+      - label: "Off"
+      - label: Active
+      - label: Inactive
+      - label: Enabled
+      - label: Disabled
+  - domain_name: compass
+    domain_label: direction
+    source: curated
+    member_count: 12
+    members:
+      - label: North
+      - label: South
+      - label: East
+      - label: West
+      - label: NE
+      - label: NW
+      - label: SE
+      - label: SW
+      - label: Northeast
+      - label: Northwest
+      - label: Southeast
+      - label: Southwest
+  - domain_name: school_types
+    domain_label: school_type
+    source: "curated:us_education"
+    member_count: 10
+    members:
+      - label: Elementary School
+        alt_labels: [Elementary, Primary, Grade School]
+      - label: Middle School
+        alt_labels: [Junior High, Intermediate]
+      - label: High School
+        alt_labels: [Secondary, Senior High]
+      - label: Charter School
+        alt_labels: [Charter]
+      - label: Magnet School
+        alt_labels: [Magnet]
+      - label: Vocational School
+        alt_labels: [Vocational, Career, Technical, CTE]
+      - label: Special Education
+        alt_labels: [SPED, Special Ed]
+      - label: "Pre-K"
+        alt_labels: ["Pre-Kindergarten", Preschool, Early Childhood]
+      - label: "K-8"
+        alt_labels: ["K-8 School"]
+      - label: "K-12"
+        alt_labels: ["K-12 School"]
+  - domain_name: land_use
+    domain_label: land_use
+    source: "curated:zoning"
+    member_count: 9
+    members:
+      - label: Residential
+        alt_labels: [R, RES]
+      - label: Commercial
+        alt_labels: [C, COM]
+      - label: Industrial
+        alt_labels: [I, IND, Manufacturing]
+      - label: Agricultural
+        alt_labels: [A, AG, Farm]
+      - label: Institutional
+        alt_labels: [INST, Government]
+      - label: Mixed Use
+        alt_labels: [MU, MXD]
+      - label: Open Space
+        alt_labels: [OS, Park, Recreation]
+      - label: Vacant
+        alt_labels: [VAC, Undeveloped]
+      - label: Transportation
+        alt_labels: [TRANS, ROW, Right of Way]
+  - domain_name: crime_categories
+    domain_label: crime
+    source: "curated:fbi_ucr"
+    member_count: 17
+    members:
+      - label: Homicide
+        alt_labels: [Murder, Manslaughter]
+      - label: Rape
+        alt_labels: [Sexual Assault]
+      - label: Robbery
+      - label: Aggravated Assault
+        alt_labels: [Assault, Felony Assault]
+      - label: Burglary
+        alt_labels: [Breaking and Entering, "B&E"]
+      - label: "Larceny-Theft"
+        alt_labels: [Larceny, Theft, Petit Larceny, Grand Larceny]
+      - label: Motor Vehicle Theft
+        alt_labels: [Auto Theft, Car Theft, GTA]
+      - label: Arson
+      - label: Drug/Narcotic Violations
+        alt_labels: [Drug, Narcotics, Controlled Substance]
+      - label: DUI
+        alt_labels: [DWI, Driving Under Influence]
+      - label: Fraud
+        alt_labels: [Forgery, Counterfeiting]
+      - label: Vandalism
+        alt_labels: [Criminal Mischief, Malicious Mischief]
+      - label: Weapons Violation
+        alt_labels: [Weapons, Firearms]
+      - label: Prostitution
+        alt_labels: [Solicitation]
+      - label: Disorderly Conduct
+        alt_labels: [Disturbing the Peace]
+      - label: Trespass
+        alt_labels: [Criminal Trespass]
+      - label: Domestic Violence
+        alt_labels: [DV, Intimate Partner Violence]
+  - domain_name: utility_types
+    domain_label: utility
+    source: curated
+    member_count: 7
+    members:
+      - label: Water
+        alt_labels: [H2O, Water Supply]
+      - label: Sewer
+        alt_labels: [Wastewater, Sanitary]
+      - label: Electric
+        alt_labels: [Electricity, Power, Electrical]
+      - label: Gas
+        alt_labels: [Natural Gas]
+      - label: Stormwater
+        alt_labels: [Storm Drain, Storm Sewer]
+      - label: Telecommunications
+        alt_labels: [Telecom, Cable, Fiber]
+      - label: Solid Waste
+        alt_labels: [Trash, Garbage, Refuse, Waste]
