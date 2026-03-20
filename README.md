@@ -87,7 +87,7 @@ llama.cpp also exposes a callback-based loader (`llama_model_init_from_user`) th
 
 ## Prior art and acknowledgments
 
-This project builds directly on the work of [Alex Garcia](https://github.com/asg017), whose SQLite extensions established the pattern blobembed follows:
+[Alex Garcia](https://github.com/asg017)'s sqlite-lembed was the introduction to the idea that text embeddings could live inside the database as a first-class operation. His work on the sqlite-* extension family demonstrated that serious ML capabilities can be delivered as loadable SQL functions with no external dependencies — an approach that directly inspired the blob\* family's architecture.
 
 - **[sqlite-lembed](https://github.com/asg017/sqlite-lembed)** — SQLite extension for local text embeddings via llama.cpp. Single-file C implementation that loads GGUF models, caches model+context, and exposes `lembed(model, text) → BLOB`. This is the direct reference implementation for blobembed's SQLite wrapper.
 - **[sqlite-vec](https://github.com/asg017/sqlite-vec)** — SQLite vector search extension. The natural complement to blobembed on the SQLite side (embed with blobembed, index/search with sqlite-vec).
