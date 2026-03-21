@@ -257,6 +257,7 @@ extern "C" int blobembed_load_model(const char *name, const char *path) {
     cparams.n_ctx = (uint32_t)n_ctx_train;
     cparams.n_batch = (uint32_t)n_ctx_train;
     cparams.n_ubatch = (uint32_t)n_ctx_train;
+    cparams.n_seq_max = 256; /* support batched multi-sequence embedding */
 
     auto *entry = new ModelEntry();
     entry->model = model;
@@ -480,6 +481,164 @@ extern "C" float *blobembed_embed(const char *model_name,
 
 extern "C" void blobembed_free_embedding(float *embd) {
     free(embd);
+}
+
+/* ── Batched embedding ─────────────────────────────────────────────── */
+
+/*
+ * Embed multiple texts in a single forward pass.
+ *
+ * Each text gets its own seq_id in the batch. The GPU loads the model
+ * weights once and processes all sequences simultaneously — amortizing
+ * the memory bandwidth cost across the batch.
+ *
+ * texts:     array of C strings
+ * text_lens: array of lengths (parallel to texts)
+ * n_texts:   number of texts
+ * out_dim:   set to the embedding dimension
+ *
+ * Returns a malloc'd array of (n_texts * n_embd) floats, laid out as
+ * [text0_emb0..text0_embN, text1_emb0..text1_embN, ...].
+ * Each embedding is L2-normalized.
+ * Caller must free with blobembed_free_embedding().
+ */
+extern "C" float *blobembed_embed_batch(const char *model_name,
+                                        const char **texts,
+                                        const size_t *text_lens,
+                                        int n_texts,
+                                        int *out_dim) {
+    ModelEntry *entry = find_model(model_name);
+    if (!entry) {
+        set_error(std::string("model not loaded: ") + (model_name ? model_name : "(null)"));
+        return nullptr;
+    }
+
+    const llama_vocab *vocab = llama_model_get_vocab(entry->model);
+    int n_embd = entry->n_embd;
+    int n_ctx = entry->n_ctx;
+
+    /* Tokenize all texts, track per-text token counts */
+    std::vector<llama_token> all_tokens;
+    std::vector<int> token_counts(n_texts);
+    std::vector<int> token_offsets(n_texts);
+
+    int total_tokens = 0;
+    for (int t = 0; t < n_texts; t++) {
+        llama_token *toks = nullptr;
+        int n = tokenize_text(vocab, texts[t], text_lens[t], &toks);
+        if (n < 0) return nullptr;
+
+        token_offsets[t] = total_tokens;
+        token_counts[t] = n;
+
+        all_tokens.insert(all_tokens.end(), toks, toks + n);
+        total_tokens += n;
+        free(toks);
+    }
+
+    /* Allocate result buffer */
+    float *result = (float *)malloc(n_texts * n_embd * sizeof(float));
+    if (!result) { set_error("out of memory"); return nullptr; }
+
+    int ctx_idx = entry->pool.acquire();
+    llama_context *ctx = entry->pool.contexts[ctx_idx];
+
+    /* Process texts in sub-batches that fit within the context window.
+     * Pack as many sequences as possible into each forward pass. */
+    int t = 0;
+    static int batch_call_count = 0;
+    static double total_batch_time = 0.0;
+
+    while (t < n_texts) {
+        /* Greedily fill a batch up to n_ctx tokens */
+        int batch_start = t;
+        int batch_tokens = 0;
+        while (t < n_texts && batch_tokens + token_counts[t] <= n_ctx) {
+            batch_tokens += token_counts[t];
+            t++;
+        }
+        int batch_size = t - batch_start;
+
+        /* If a single text exceeds n_ctx, process it alone (overflow path) */
+        if (batch_size == 0) {
+            entry->pool.release(ctx_idx);
+            int dim = 0;
+            float *single = blobembed_embed(model_name, texts[t], text_lens[t], &dim);
+            ctx_idx = entry->pool.acquire();
+            ctx = entry->pool.contexts[ctx_idx];
+            if (!single) {
+                entry->pool.release(ctx_idx);
+                free(result);
+                return nullptr;
+            }
+            memcpy(result + t * n_embd, single, n_embd * sizeof(float));
+            blobembed_free_embedding(single);
+            t++;
+            continue;
+        }
+
+        /* Build batch with batch_size sequences */
+        llama_kv_self_clear(ctx);
+        llama_batch batch = llama_batch_init(batch_tokens, 0, batch_size);
+
+        for (int b = 0; b < batch_size; b++) {
+            int src = batch_start + b;
+            int offset = token_offsets[src];
+            int count = token_counts[src];
+            for (int i = 0; i < count; i++) {
+                int pos = batch.n_tokens;
+                batch.token[pos]    = all_tokens[offset + i];
+                batch.pos[pos]      = i;
+                batch.n_seq_id[pos] = 1;
+                batch.seq_id[pos][0] = b; /* seq_id within this sub-batch */
+                batch.logits[pos]   = true;
+                batch.n_tokens++;
+            }
+        }
+
+        /* Single forward pass for the sub-batch */
+        int rc;
+        if (llama_model_has_encoder(entry->model) &&
+            !llama_model_has_decoder(entry->model)) {
+            rc = llama_encode(ctx, batch);
+        } else {
+            rc = llama_decode(ctx, batch);
+        }
+        llama_batch_free(batch);
+
+        if (rc != 0) {
+            entry->pool.release(ctx_idx);
+            free(result);
+            set_error("batch encode failed");
+            return nullptr;
+        }
+
+        /* Extract per-sequence embeddings from this sub-batch */
+        for (int b = 0; b < batch_size; b++) {
+            const float *embd = llama_get_embeddings_seq(ctx, b);
+            if (!embd) {
+                entry->pool.release(ctx_idx);
+                free(result);
+                set_error("failed to extract embeddings for sequence");
+                return nullptr;
+            }
+            int dst = batch_start + b;
+            memcpy(result + dst * n_embd, embd, n_embd * sizeof(float));
+            l2_normalize(result + dst * n_embd, n_embd);
+        }
+
+        batch_call_count++;
+        /* Progress: log every 20 sub-batches */
+        if (batch_call_count % 20 == 0) {
+            fprintf(stderr, "[blobembed] batch #%d: %d texts in sub-batch of %d tokens, "
+                    "%d/%d texts done\n",
+                    batch_call_count, batch_size, batch_tokens, t, n_texts);
+        }
+    }
+
+    entry->pool.release(ctx_idx);
+    if (out_dim) *out_dim = n_embd;
+    return result;
 }
 
 /* ── Cosine similarity ─────────────────────────────────────────────── */

@@ -62,6 +62,21 @@ float *blobembed_embed(const char *model_name,
 void blobembed_free_embedding(float *embd);
 
 /*
+ * Embed multiple texts in a single forward pass (batched).
+ *
+ * The GPU loads model weights once and processes all texts simultaneously.
+ * Returns a flat array of (n_texts * *out_dim) floats.
+ * Each embedding is L2-normalized.
+ * Falls back to per-text encoding if total tokens exceed context window.
+ * Caller must free with blobembed_free_embedding().
+ */
+float *blobembed_embed_batch(const char *model_name,
+                             const char **texts,
+                             const size_t *text_lens,
+                             int n_texts,
+                             int *out_dim);
+
+/*
  * Compute cosine similarity between two float arrays.
  *
  * Both must have the same length. Returns NaN on error (dimension mismatch).

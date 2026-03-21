@@ -127,6 +127,12 @@ static void be_load_hf_model_func(duckdb_function_info info,
 }
 
 /* ── be_embed(model_name, text) → LIST(FLOAT) ────────────────────── */
+/*
+ * Batched: collects all valid texts from the chunk, embeds them in one
+ * forward pass via blobembed_embed_batch(), then scatters results back
+ * to the output vector. The GPU loads model weights once for the whole
+ * chunk instead of once per row.
+ */
 
 static void be_embed_func(duckdb_function_info info,
                           duckdb_data_chunk input,
@@ -143,53 +149,84 @@ static void be_embed_func(duckdb_function_info info,
     duckdb_list_entry *entries = (duckdb_list_entry *)duckdb_vector_get_data(output);
     duckdb_vector child = duckdb_list_vector_get_child(output);
 
-    idx_t total_offset = 0;
+    /* Pass 1: collect valid texts and their null-terminated copies */
+    char *model_name = NULL;
+    const char **texts = (const char **)malloc(size * sizeof(char *));
+    size_t *text_lens = (size_t *)malloc(size * sizeof(size_t));
+    char **text_bufs = (char **)malloc(size * sizeof(char *));
+    int *row_map = (int *)malloc(size * sizeof(int)); /* batch_idx → row */
+    int n_valid = 0;
 
     for (idx_t row = 0; row < size; row++) {
         if ((val0 && !duckdb_validity_row_is_valid(val0, row)) ||
             (val1 && !duckdb_validity_row_is_valid(val1, row))) {
             duckdb_vector_ensure_validity_writable(output);
             duckdb_validity_set_row_invalid(duckdb_vector_get_validity(output), row);
-            entries[row].offset = total_offset;
+            entries[row].offset = 0;
             entries[row].length = 0;
             continue;
         }
 
-        char *model_name = str_dup_z(&data0[row]);
+        /* Get model name from first valid row */
+        if (!model_name) {
+            model_name = str_dup_z(&data0[row]);
+        }
+
         uint32_t text_len;
         const char *text = str_ptr(&data1[row], &text_len);
 
-        /* Need null-terminated text for the core API */
         char *text_z = (char *)malloc(text_len + 1);
         memcpy(text_z, text, text_len);
         text_z[text_len] = '\0';
 
-        int dim = 0;
-        float *embd = blobembed_embed(model_name, text_z, (size_t)text_len, &dim);
-        free(model_name);
-        free(text_z);
+        texts[n_valid] = text_z;
+        text_lens[n_valid] = (size_t)text_len;
+        text_bufs[n_valid] = text_z;
+        row_map[n_valid] = (int)row;
+        n_valid++;
+    }
 
-        if (!embd) {
-            duckdb_scalar_function_set_error(info, blobembed_errmsg());
-            return;
-        }
+    if (n_valid == 0) {
+        free(texts); free(text_lens); free(text_bufs); free(row_map);
+        if (model_name) free(model_name);
+        duckdb_list_vector_set_size(output, 0);
+        return;
+    }
 
-        /* Reserve space in the child vector */
-        duckdb_list_vector_reserve(output, total_offset + (idx_t)dim);
+    /* Pass 2: batch embed */
+    int dim = 0;
+    float *all_embeds = blobembed_embed_batch(model_name, texts, text_lens,
+                                              n_valid, &dim);
 
-        /* Set list entry */
+    /* Free text buffers */
+    for (int i = 0; i < n_valid; i++) free(text_bufs[i]);
+    free(texts); free(text_lens); free(text_bufs);
+    free(model_name);
+
+    if (!all_embeds) {
+        free(row_map);
+        duckdb_scalar_function_set_error(info, blobembed_errmsg());
+        return;
+    }
+
+    /* Pass 3: scatter results to output vector */
+    idx_t total_offset = 0;
+    duckdb_list_vector_reserve(output, (idx_t)(n_valid * dim));
+
+    for (int i = 0; i < n_valid; i++) {
+        idx_t row = (idx_t)row_map[i];
         entries[row].offset = total_offset;
         entries[row].length = (uint64_t)dim;
 
-        /* Copy floats into the child vector */
         float *child_data = (float *)duckdb_vector_get_data(child);
-        memcpy(&child_data[total_offset], embd, (size_t)dim * sizeof(float));
-
+        memcpy(&child_data[total_offset], all_embeds + i * dim,
+               (size_t)dim * sizeof(float));
         total_offset += (idx_t)dim;
-        blobembed_free_embedding(embd);
     }
 
     duckdb_list_vector_set_size(output, total_offset);
+    blobembed_free_embedding(all_embeds);
+    free(row_map);
 }
 
 /* ── be_embed_dim(model_name) → INTEGER ───────────────────────────── */
