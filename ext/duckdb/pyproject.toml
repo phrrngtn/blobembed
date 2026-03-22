@@ -1,0 +1,16 @@
+[build-system]
+requires = ["scikit-build-core>=0.5"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "blobembed-duckdb"
+version = "0.1.0"
+description = "text embeddings via GGUF models (llama.cpp) — Duckdb extension"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [{name = "Paul Harrington"}]
+dependencies = []
+
+[tool.scikit-build]
+wheel.packages = ["blobembed_duckdb"]
+sdist.include = ["src/**", "include/**", "duckdb_ext/**"]

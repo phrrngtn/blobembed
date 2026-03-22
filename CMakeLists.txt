@@ -47,6 +47,7 @@ if(BUILD_PYTHON_BINDINGS)
   target_link_libraries(blobembed_ext PRIVATE ${BE_LIBS})
   set_target_properties(blobembed_ext PROPERTIES
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/python/blobembed")
+  install(TARGETS blobembed_ext LIBRARY DESTINATION blobembed)
 endif()
 
 # ── DuckDB C API headers (for extension build) ──────────────────────
