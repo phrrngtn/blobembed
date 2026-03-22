@@ -1,6 +1,6 @@
 [project]
 name = "blobembed"
-version = "0.1.0"
+version = "0.2.0"
 description = "Text embeddings via GGUF models (llama.cpp) for SQLite, DuckDB, and Python"
 requires-python = ">=3.8"
 dependencies = []

@@ -53,11 +53,11 @@ Full doc: `~/checkouts/blobembed/doc/catalog-as-taxonomy.md`
 
 ## Reference Data in PG
 
-| Table | Rows | Purpose |
-|---|---|---|
-| `domain.wordnet_category` | 5,315 | Category labels + glosses |
-| `domain.wordnet_category_embedding` | 5,315 | nomic 768-dim vectors for category matching |
-| `domain.member_embedding` | 13,217 | Domain member embeddings for fine-grained matching |
+| Table                               | Rows   | Purpose                                            |
+| ----------------------------------- | ------ | -------------------------------------------------- |
+| `domain.wordnet_category`           | 5,315  | Category labels + glosses                          |
+| `domain.wordnet_category_embedding` | 5,315  | nomic 768-dim vectors for category matching        |
+| `domain.member_embedding`           | 13,217 | Domain member embeddings for fine-grained matching |
 
 All in PG `rule4_test`, queryable from DuckDB via postgres scanner.
 
