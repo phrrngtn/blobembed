@@ -28,7 +28,7 @@ def main():
     if system == "Darwin":
         plat = "osx_arm64" if machine == "arm64" else "osx_amd64"
     elif system == "Linux":
-        plat = "linux_arm64" if machine == "aarch64" else "linux_amd64_gcc4"
+        plat = "linux_arm64" if machine == "aarch64" else "linux_amd64"
     else:
         plat = "windows_amd64"
 
